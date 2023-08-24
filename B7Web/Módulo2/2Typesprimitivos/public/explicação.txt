@@ -1,0 +1,55 @@
+A tipagem é uma característica fundamental do TypeScript, que é um superconjunto tipado do JavaScript. A tipagem se refere à capacidade de especificar o tipo de dados que uma variável, parâmetro de função, propriedade de objeto, etc., pode conter. Ela permite definir com precisão quais tipos de valores são esperados em diferentes partes do código, o que ajuda a evitar erros e bugs relacionados a tipos de dados.
+
+No TypeScript, existem dois tipos principais de tipagem: tipos explícitos e tipos inferidos.
+
+Tipos Explícitos: Isso envolve definir explicitamente o tipo de uma variável ou valor. Por exemplo:
+
+let nome: string = "João";
+let idade: number = 30;
+let estaAtivo: boolean = true;
+let numeros: number[] = [1, 2, 3];
+let pessoa: { nome: string, idade: number } = { nome: "Maria", idade: 25 };
+
+
+
+Nesses exemplos, os tipos de dados estão sendo definidos explicitamente usando a sintaxe : tipo.
+
+Tipos Inferidos: O TypeScript também é capaz de inferir tipos automaticamente com base nos valores atribuídos. Por exemplo:
+
+let nome = "Ana"; // TypeScript infere que 'nome' é do tipo string
+let quantidade = 10; // TypeScript infere que 'quantidade' é do tipo number
+
+
+Além dos tipos primitivos, o TypeScript oferece recursos mais avançados de tipagem, como:
+
+Tipos Personalizados: Você pode criar seus próprios tipos usando interfaces ou tipos personalizados. Isso é especialmente útil para descrever a forma de objetos complexos.
+
+interface Pessoa {
+    nome: string;
+    idade: number;
+}
+
+let pessoa: Pessoa = { nome: "Carlos", idade: 28 };
+
+
+
+União de Tipos: Permite que uma variável aceite mais de um tipo de valor.
+
+let nota: number | string;
+nota = 85;
+nota = "Aprovado";
+
+
+
+Tipos Genéricos: São tipos que podem ser parametrizados com um ou mais tipos, permitindo reutilização de código com diferentes tipos.
+
+
+function toArray<T>(valor: T): T[] {
+    return [valor];
+}
+
+let numeros: number[] = toArray(5);
+let nomes: string[] = toArray("Alice");
+
+
+O TypeScript traz esses recursos de tipagem para auxiliar no desenvolvimento de código mais seguro e confiável, ajudando os desenvolvedores a identificarem erros de tipo em tempo de compilação, em vez de encontrá-los em tempo de execução, como é comum no JavaScript puro. Isso resulta em um código mais robusto e de fácil manutenção.
