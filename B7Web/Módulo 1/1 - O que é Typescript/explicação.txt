@@ -1,0 +1,40 @@
+TypeScript é uma linguagem de programação de código aberto desenvolvida pela Microsoft. Ela é uma superset da linguagem JavaScript, o que significa que todas as construções e funcionalidades do JavaScript são suportadas pelo TypeScript, mas o TypeScript adiciona recursos extras e recursos de tipagem estática que não estão presentes no JavaScript padrão.
+
+As principais características do TypeScript incluem:
+
+Tipagem Estática: Uma das características mais distintivas do TypeScript é a capacidade de definir tipos para variáveis, parâmetros de função e retorno de funções. Isso permite que os desenvolvedores capturem erros em tempo de compilação relacionados a tipos, o que ajuda a evitar muitos erros comuns que ocorrem durante o desenvolvimento JavaScript.
+
+Interfaces: O TypeScript permite definir interfaces que descrevem a forma de objetos. Isso é particularmente útil para definir contratos claros entre partes do código ou para definir como os objetos devem ser estruturados.
+
+Herança de Classes: O TypeScript suporta herança de classes, permitindo que você crie hierarquias de classes com propriedades e métodos compartilhados.
+
+Decorators: Decorators são anotações que podem ser usadas para modificar classes, métodos e propriedades. Eles são frequentemente usados em frameworks como o Angular para adicionar metadados e comportamentos adicionais.
+
+Enums: Enums permitem definir um conjunto de valores nomeados, o que pode melhorar a legibilidade do código e evitar erros de digitação.
+
+Outros recursos modernos do ES6/ES7: O TypeScript também inclui suporte para muitos recursos modernos da linguagem JavaScript, como arrow functions, classes, módulos, async/await, e muito mais.
+
+Compilação: O código TypeScript deve ser compilado para JavaScript antes de ser executado nos navegadores ou no servidor. A compilação pode ser feita usando a ferramenta de linha de comando tsc ou integrada em ferramentas de automação de tarefas.
+
+O TypeScript é amplamente utilizado em projetos de desenvolvimento web, especialmente em conjunto com frameworks como Angular, React e Vue.js, onde suas vantagens de tipagem estática e recursos avançados ajudam a criar código mais seguro, manutenível e escalável.
+
+
+TypeScript é uma linguagem de programação de código aberto desenvolvida pela Microsoft. Ela é uma superset da linguagem JavaScript, o que significa que todas as construções e funcionalidades do JavaScript são suportadas pelo TypeScript, mas o TypeScript adiciona recursos extras e recursos de tipagem estática que não estão presentes no JavaScript padrão.
+
+As principais características do TypeScript incluem:
+
+Tipagem Estática: Uma das características mais distintivas do TypeScript é a capacidade de definir tipos para variáveis, parâmetros de função e retorno de funções. Isso permite que os desenvolvedores capturem erros em tempo de compilação relacionados a tipos, o que ajuda a evitar muitos erros comuns que ocorrem durante o desenvolvimento JavaScript.
+
+Interfaces: O TypeScript permite definir interfaces que descrevem a forma de objetos. Isso é particularmente útil para definir contratos claros entre partes do código ou para definir como os objetos devem ser estruturados.
+
+Herança de Classes: O TypeScript suporta herança de classes, permitindo que você crie hierarquias de classes com propriedades e métodos compartilhados.
+
+Decorators: Decorators são anotações que podem ser usadas para modificar classes, métodos e propriedades. Eles são frequentemente usados em frameworks como o Angular para adicionar metadados e comportamentos adicionais.
+
+Enums: Enums permitem definir um conjunto de valores nomeados, o que pode melhorar a legibilidade do código e evitar erros de digitação.
+
+Outros recursos modernos do ES6/ES7: O TypeScript também inclui suporte para muitos recursos modernos da linguagem JavaScript, como arrow functions, classes, módulos, async/await, e muito mais.
+
+Compilação: O código TypeScript deve ser compilado para JavaScript antes de ser executado nos navegadores ou no servidor. A compilação pode ser feita usando a ferramenta de linha de comando tsc ou integrada em ferramentas de automação de tarefas.
+
+O TypeScript é amplamente utilizado em projetos de desenvolvimento web, especialmente em conjunto com frameworks como Angular, React e Vue.js, onde suas vantagens de tipagem estática e recursos avançados ajudam a criar código mais seguro, manutenível e escalável.
