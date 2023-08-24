@@ -1,0 +1,12 @@
+
+--noEmitOnError é uma opção de linha de comando usada no compilador TypeScript (tsc) para controlar o comportamento de geração de arquivos de saída durante o processo de compilação. O TypeScript é um superconjunto de JavaScript que adiciona tipagem estática opcional e outras características ao JavaScript padrão.
+
+Quando você compila código TypeScript, o compilador tsc verifica o código em busca de erros de sintaxe, erros de tipagem e outros problemas que possam surgir. A opção --noEmitOnError afeta o que acontece se o compilador encontrar erros no código durante o processo de compilação.
+
+Quando você inclui a opção --noEmitOnError na linha de comando ao chamar o compilador TypeScript, isso indica ao compilador que, se ele encontrar qualquer erro no código durante o processo de compilação, ele não deve gerar nenhum arquivo de saída (normalmente arquivos JavaScript ou outros formatos que possam ser executados pelo ambiente de execução JavaScript). Em outras palavras, a opção --noEmitOnError impede que o compilador gere arquivos de saída quando há erros no código.
+
+Essa opção pode ser útil em cenários onde você deseja garantir que não haja nenhum arquivo de saída gerado se houver erros no código-fonte. Isso pode ser especialmente útil em ambientes de integração contínua ou sistemas de construção automatizados, onde você deseja que a geração de arquivos de saída seja condicional à ausência de erros.
+
+Por padrão, se você não usar a opção --noEmitOnError, o compilador TypeScript ainda tentará gerar arquivos de saída, mesmo que haja erros no código. Isso pode resultar em arquivos de saída com problemas, o que pode levar a comportamentos inesperados quando esses arquivos são executados no ambiente JavaScript.
+
+Em resumo, --noEmitOnError é uma opção que permite controlar se o compilador TypeScript deve gerar arquivos de saída quando encontra erros no código-fonte durante o processo de compilação. Se você passar essa opção, o compilador não emitirá arquivos de saída se encontrar quaisquer erros.
