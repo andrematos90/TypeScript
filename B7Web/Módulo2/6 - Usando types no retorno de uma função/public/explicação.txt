@@ -1,0 +1,53 @@
+Em TypeScript, você pode usar tipos para definir o retorno esperado de uma função. Isso ajuda a declarar de forma explícita qual é o tipo de dado que a função irá retornar, permitindo que o compilador faça verificações de tipo e forneça informações mais precisas sobre o código.
+
+Aqui está a sintaxe básica para definir o tipo de retorno de uma função:
+
+function minhaFuncao(): TipoDeRetorno {
+    // Corpo da função
+    // ...
+    return valorDeRetorno;
+}
+
+
+Onde:
+
+minhaFuncao é o nome da sua função.
+TipoDeRetorno é o tipo que você espera que a função retorne. Pode ser qualquer tipo válido em TypeScript, como number, string, boolean, object, array, tipos personalizados, etc.
+valorDeRetorno é o valor que a função irá retornar. Deve ser compatível com o tipo especificado.
+Exemplo com diferentes tipos de retorno:
+
+function soma(a: number, b: number): number {
+    return a + b;
+}
+
+function cumprimentar(nome: string): string {
+    return `Olá, ${nome}!`;
+}
+
+function estaChovendo(): boolean {
+    return true;
+}
+
+
+Se a função não retornar nada, você pode usar o tipo void para indicar explicitamente que não há valor de retorno:
+
+function imprimirMensagem(): void {
+    console.log("Mensagem impressa.");
+}
+
+
+Se uma função puder retornar diferentes tipos, você pode usar a união de tipos (|) para representar isso:
+
+function converteValor(input: string): number | string {
+    const numero = parseInt(input);
+    if (!isNaN(numero)) {
+        return numero;
+    } else {
+        return "Não é um número válido.";
+    }
+}
+
+
+O uso de tipos de retorno é importante, pois ajuda a evitar erros durante o desenvolvimento, oferece informações úteis ao trabalhar com a função e auxilia os desenvolvedores que utilizam a função a entenderem o que esperar dela.
+
+Lembre-se de que o TypeScript é uma linguagem de tipagem estática, o que significa que as verificações de tipo são feitas durante a compilação. Isso contribui para uma codificação mais segura e ajuda a prevenir muitos erros comuns que podem ocorrer no JavaScript puro.
