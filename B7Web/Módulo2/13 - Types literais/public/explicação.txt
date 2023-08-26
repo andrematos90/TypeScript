@@ -1,0 +1,57 @@
+Os tipos literais em TypeScript permitem especificar um conjunto exato de valores que uma variável, parâmetro de função ou propriedade de objeto pode conter. Eles permitem que você restrinja os valores possíveis a um conjunto específico e fornecem maior segurança e clareza ao seu código.
+
+Existem dois tipos literais principais em TypeScript: literais de string e literais numéricos. Além disso, o TypeScript 4.1 introduziu literais de template string e literais booleanos.
+
+Literais de String:
+
+type Cor = "vermelho" | "verde" | "azul";
+let corEscolhida: Cor = "verde"; // Válido
+let outraCor: Cor = "amarelo";   // Inválido, pois "amarelo" não é um valor permitido
+
+
+Literais Numéricos:
+type Mes = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
+let mesAtual: Mes = 8; // Válido
+let mesInvalido: Mes = 15; // Inválido, pois 15 não é um valor permitido
+
+
+Literais de Template String (a partir do TypeScript 4.1):
+type EmailFormato = `${string}@${string}.${string}`;
+let email: EmailFormato = "usuario@dominio.com"; // Válido
+let emailInvalido: EmailFormato = "email@invalido"; // Inválido
+
+Literais Booleanos (a partir do TypeScript 4.1):
+type VerdadeiroFalso = true | false;
+let resposta: VerdadeiroFalso = true; // Válido
+let naoValido: VerdadeiroFalso = "verdadeiro"; // Inválido
+
+
+Usar tipos literais é útil quando você deseja expressar claramente quais valores são permitidos para uma variável ou propriedade. Eles tornam seu código mais autodocumentado e ajudam o TypeScript a fazer verificações de tipo mais precisas.
+
+Além disso, você pode usar literais em combinação com outros recursos do TypeScript, como tipos condicionais e uniões de tipos, para criar tipos ainda mais complexos e precisos.
+
+Em resumo, os tipos literais são usados para definir um conjunto específico de valores que uma variável pode conter. Eles aumentam a segurança e a expressividade do seu código ao limitar as opções de valores aceitáveis.
+
+Usando Tipos Literais:
+Os tipos literais são usados principalmente para definir os possíveis valores que uma variável, parâmetro ou propriedade pode ter.
+Eles são úteis quando você deseja garantir que apenas valores específicos sejam aceitos, fornecendo maior clareza e segurança ao código.
+São especialmente úteis quando você deseja definir um conjunto fixo de opções para uma determinada propriedade, como estados, opções de seleção etc.
+
+type Cor = "vermelho" | "verde" | "azul";
+let corEscolhida: Cor = "verde"; // Válido
+let outraCor: Cor = "amarelo";   // Inválido
+
+
+Usando Constantes:
+As constantes são usadas para armazenar valores fixos que não devem ser modificados ao longo do código.
+Elas são úteis quando você deseja reutilizar valores em diferentes partes do seu código e deseja dar a esses valores um nome significativo.
+São frequentemente usadas para evitar a repetição de valores mágicos (hardcoded) em várias partes do código.
+
+const PI = 3.14159;
+let raio = 5;
+let area = PI * raio * raio;
+
+
+Ambas as abordagens têm suas vantagens e podem ser usadas dependendo do contexto. As literais de tipo são especialmente úteis quando se trata de definir um conjunto específico e restrito de valores para variáveis ou propriedades. No entanto, se você precisa armazenar um valor fixo que não muda ao longo do código, uma constante pode ser uma escolha mais adequada.
+
+Em resumo, tanto os tipos literais quanto as constantes são ferramentas valiosas em TypeScript, cada uma com seu próprio propósito e cenários de uso. A escolha entre eles dependerá das necessidades do seu código e da clareza que você deseja proporcionar ao seu programa.
