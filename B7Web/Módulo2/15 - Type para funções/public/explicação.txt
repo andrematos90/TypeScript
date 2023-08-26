@@ -1,0 +1,28 @@
+Em TypeScript, você pode usar a palavra-chave type para definir tipos personalizados não apenas para objetos, mas também para funções. Isso é conhecido como "Type para Funções" ou "Type de Assinatura de Função". Essa funcionalidade permite que você descreva a assinatura de uma função, especificando os tipos dos parâmetros e do valor de retorno.
+
+Aqui está como você pode usar o type para definir um tipo personalizado para uma função:
+
+type Calculadora = (a: number, b: number) => number;
+
+const soma: Calculadora = (a, b) => a + b;
+const subtracao: Calculadora = (a, b) => a - b;
+
+console.log(soma(5, 3));       // Saída: 8
+console.log(subtracao(10, 4)); // Saída: 6
+
+
+Nesse exemplo, o tipo Calculadora é definido como uma assinatura de função que recebe dois parâmetros do tipo number e retorna um valor do tipo number. Em seguida, as funções soma e subtracao são atribuídas ao tipo Calculadora, o que significa que elas devem atender aos requisitos da assinatura da função definida no tipo.
+
+A definição de tipos para funções é útil em vários cenários:
+
+Documentação e Clareza: Ajuda a documentar a assinatura das funções de forma mais clara, tornando o código mais legível.
+
+Verificação de Tipo: Permite que o TypeScript verifique se as funções estão sendo usadas corretamente, evitando erros de tipos incorretos em tempo de compilação.
+
+Reutilização de Tipos: Permite definir assinaturas de função complexas uma vez e reutilizá-las em várias partes do código.
+
+Compatibilidade de Função: Ajuda a garantir que funções sejam compatíveis entre si, especialmente ao trabalhar com bibliotecas e APIs.
+
+Além disso, você pode usar tipos para definir parâmetros opcionais, parâmetros padrão e até mesmo funções com sobrecarga, permitindo maior expressividade e segurança em relação ao comportamento esperado das funções.
+
+Em resumo, o uso de type para definir tipos de funções é uma parte poderosa da tipagem estática do TypeScript que ajuda a melhorar a clareza, a reutilização e a segurança do seu código ao lidar com funções.
