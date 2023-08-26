@@ -43,7 +43,6 @@ if (valor !== null) {
 }
 
 
-
 É importante notar que, quando você utiliza Union Types, o TypeScript realiza inferência de tipo inteligente para que você possa acessar propriedades e chamar métodos que são comuns aos tipos da união. No entanto, somente as operações que são válidas em todos os tipos da união serão permitidas sem uma verificação adicional.
 
 Em resumo, Union Types no TypeScript permitem que você declare variáveis, parâmetros de função e propriedades de objetos que podem aceitar mais de um tipo de valor. Isso ajuda a criar código mais flexível e robusto, abrangendo uma variedade de situações diferentes.
