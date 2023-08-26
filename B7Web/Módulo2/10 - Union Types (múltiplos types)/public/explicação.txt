@@ -1,0 +1,49 @@
+Em TypeScript, Union Types (Tipos de União) permitem que você defina um tipo que pode ser um dos vários tipos especificados. Isso é útil quando uma variável, parâmetro de função ou propriedade de objeto pode aceitar mais de um tipo de valor.
+
+A sintaxe para criar um Union Type é usar o operador de barra vertical pipe (|) entre os tipos que você deseja permitir. Aqui está um exemplo:
+
+
+let numeroOuTexto: number | string;
+
+numeroOuTexto = 42;      // Válido
+numeroOuTexto = "abc";   // Válido
+numeroOuTexto = true;    // Inválido, pois boolean não é um dos tipos permitidos
+
+
+Neste exemplo, a variável numeroOuTexto pode conter valores do tipo number ou string. Isso significa que você pode atribuir tanto números quanto strings a essa variável.
+
+Os Union Types são úteis em várias situações:
+
+Valores que podem variar: Quando você tem uma variável ou parâmetro de função que pode aceitar mais de um tipo de valor, como uma entrada de usuário que pode ser uma string ou um número.
+
+function imprimirValor(valor: number | string) {
+    console.log(valor);
+}
+
+imprimirValor(42);     // Válido
+imprimirValor("abc");  // Válido
+
+
+Trabalhando com APIs variadas: Ao lidar com bibliotecas ou APIs que podem retornar diferentes tipos de valores em situações diferentes.
+
+let resultado: number | string = obterResultado();
+
+if (typeof resultado === "number") {
+    console.log(`O resultado é um número: ${resultado}`);
+} else {
+    console.log(`O resultado é uma string: ${resultado}`);
+}
+
+
+Manuseio de valores nulos: Para lidar com valores potencialmente nulos ou indefinidos.
+
+let valor: string | null = getPossivelValor();
+if (valor !== null) {
+    console.log(valor.toUpperCase());
+}
+
+
+
+É importante notar que, quando você utiliza Union Types, o TypeScript realiza inferência de tipo inteligente para que você possa acessar propriedades e chamar métodos que são comuns aos tipos da união. No entanto, somente as operações que são válidas em todos os tipos da união serão permitidas sem uma verificação adicional.
+
+Em resumo, Union Types no TypeScript permitem que você declare variáveis, parâmetros de função e propriedades de objetos que podem aceitar mais de um tipo de valor. Isso ajuda a criar código mais flexível e robusto, abrangendo uma variedade de situações diferentes.
