@@ -1,0 +1,104 @@
+Em TypeScript, assim como em JavaScript, objetos são estruturas de dados que armazenam pares de chave e valor, onde a chave é uma string e o valor pode ser de qualquer tipo, incluindo outros objetos. No TypeScript, você pode usar tipos para definir a estrutura esperada de um objeto, especificando os tipos dos valores associados a cada chave.
+
+Aqui está como você pode usar tipos em objetos no TypeScript:
+
+// Definindo um tipo para um objeto
+type Pessoa = {
+    nome: string;
+    idade: number;
+    casado: boolean;
+};
+
+// Criando um objeto do tipo Pessoa
+const pessoa: Pessoa = {
+    nome: "Alice",
+    idade: 30,
+    casado: false
+};
+
+
+No exemplo acima, um tipo chamado Pessoa é definido usando a sintaxe {} para criar uma estrutura que descreve o formato do objeto. Ele possui três propriedades: nome do tipo string, idade do tipo number e casado do tipo boolean.
+
+Então, um objeto chamado pessoa é criado seguindo a estrutura definida pelo tipo Pessoa. Isso significa que o TypeScript irá verificar se as propriedades e os tipos no objeto pessoa estão de acordo com o tipo Pessoa. Se houver discrepâncias, o compilador irá emitir um erro.
+
+Você também pode usar tipos em objetos de maneira mais flexível, como em:
+
+// Definindo um tipo para um objeto com propriedades opcionais
+type Opcoes = {
+    cor?: string;
+    tamanho?: number;
+};
+
+// Criando um objeto do tipo Opcoes
+const configuracao: Opcoes = {
+    cor: "vermelho"
+};
+
+
+Nesse exemplo, o tipo Opcoes define propriedades cor e tamanho como opcionais usando o operador ?. Isso permite que você crie objetos configuracao com apenas a propriedade cor se desejar.
+
+Além disso, você pode usar tipos em objetos para representar estruturas mais complexas, como objetos aninhados:
+
+type Endereco = {
+    rua: string;
+    numero: number;
+};
+
+type Pessoa = {
+    nome: string;
+    endereco: Endereco;
+};
+
+const pessoa: Pessoa = {
+    nome: "João",
+    endereco: {
+        rua: "Rua Principal",
+        numero: 123
+    }
+};
+
+
+Em resumo, usar tipos em objetos no TypeScript ajuda a definir estruturas de dados claras e especificar quais propriedades devem estar presentes e quais são os tipos esperados para cada propriedade. Isso melhora a legibilidade, ajuda na detecção de erros e contribui para o desenvolvimento mais seguro e confiável de código.
+
+
+
+Você pode passar objetos como parâmetros de funções da mesma maneira que passa outros tipos de dados. No TypeScript, isso ajuda a criar funções mais flexíveis e reutilizáveis, permitindo que você trabalhe com estruturas de dados complexas.
+
+Aqui está como você pode passar objetos como parâmetros de funções:
+
+
+type Pessoa = {
+    nome: string;
+    idade: number;
+};
+
+function exibirDetalhes(pessoa: Pessoa) {
+    console.log(`Nome: ${pessoa.nome}, Idade: ${pessoa.idade}`);
+}
+
+const pessoa1: Pessoa = {
+    nome: "Alice",
+    idade: 30
+};
+
+exibirDetalhes(pessoa1); // Chama a função passando o objeto pessoa1 como parâmetro
+
+
+Neste exemplo, definimos um tipo Pessoa que descreve a estrutura esperada de um objeto contendo informações sobre uma pessoa. Em seguida, temos uma função exibirDetalhes que aceita um parâmetro do tipo Pessoa e imprime os detalhes dessa pessoa.
+
+Quando chamamos a função exibirDetalhes e passamos o objeto pessoa1 como parâmetro, o TypeScript verifica se o objeto fornecido é compatível com o tipo Pessoa. Se estiver em conformidade, a função é executada corretamente.
+
+Lembre-se de que o TypeScript realiza verificações de tipo em tempo de compilação, o que significa que ele verifica se os tipos fornecidos correspondem ao que é esperado pela função. Isso ajuda a evitar erros durante a execução.
+
+Além disso, você também pode usar desestruturação para extrair propriedades específicas do objeto ao passá-lo como argumento:
+
+function saudacao({ nome }: Pessoa) {
+    console.log(`Olá, ${nome}!`);
+}
+
+saudacao(pessoa1); // Chama a função passando o objeto pessoa1 como parâmetro
+
+
+Neste exemplo, a função saudacao extrai apenas a propriedade nome do objeto pessoa1 usando a desestruturação.
+
+Em resumo, passar objetos como parâmetros de funções no TypeScript é uma maneira eficaz de trabalhar com estruturas de dados complexas e tornar suas funções mais flexíveis e reutilizáveis. Isso ajuda a manter o código organizado, legível e menos propenso a erros
