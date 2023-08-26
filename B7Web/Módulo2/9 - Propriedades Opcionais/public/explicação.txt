@@ -1,0 +1,32 @@
+Em TypeScript, as propriedades opcionais permitem que você defina propriedades em um tipo de objeto que não precisam ser obrigatoriamente fornecidas ao criar uma instância desse objeto. Isso oferece maior flexibilidade ao lidar com objetos em que nem todas as propriedades são sempre necessárias.
+
+A sintaxe para criar uma propriedade opcional em um tipo é adicionar um ponto de interrogação (?) após o nome da propriedade. Aqui está um exemplo:
+
+type Pessoa = {
+    nome: string;
+    idade?: number;
+};
+
+const pessoa1: Pessoa = {
+    nome: "Alice"
+};
+
+const pessoa2: Pessoa = {
+    nome: "André",
+    idade: 30
+};
+
+
+No exemplo acima, o tipo Pessoa possui uma propriedade obrigatória nome e uma propriedade opcional idade. Isso significa que você pode criar objetos do tipo Pessoa com ou sem a propriedade idade.
+
+Ao criar o objeto pessoa1, você não precisa fornecer a propriedade idade, porque ela é opcional. Já ao criar o objeto pessoa2, você pode incluir a propriedade idade se desejar.
+
+Propriedades opcionais são especialmente úteis quando você está lidando com objetos que podem ter diferentes conjuntos de informações. Elas permitem que você construa tipos flexíveis e evite a necessidade de criar múltiplos tipos com pequenas variações. Isso também ajuda a comunicar claramente quais informações são essenciais e quais são opcionais ao trabalhar com o código.
+
+Lembre-se de que, ao acessar propriedades opcionais em objetos, você precisa verificar se a propriedade existe antes de usá-la para evitar erros em tempo de execução. Isso pode ser feito usando o operador de verificação de nulidade (nullish) ou usando a nova funcionalidade do TypeScript chamada de chaining operator (?.).
+
+const idadeAlice = pessoa1.idade; // Será undefined
+const idadeAndré = pessoa2.idade;   // Será 33
+
+
+Propriedades opcionais são uma ferramenta poderosa para criar tipos mais flexíveis e expressivos em TypeScript, melhorando a maneira como você lida com objetos e suas variações.
