@@ -1,0 +1,47 @@
+O Contextual Typing (ou Tipagem Contextual) é um recurso poderoso do TypeScript que permite inferir automaticamente os tipos com base no contexto em que eles são utilizados. Isso torna a declaração de tipos mais concisa e reduz a necessidade de fornecer tipos explicitamente em todas as partes do código.
+
+O TypeScript utiliza as informações do contexto em que uma expressão é utilizada para determinar o tipo dessa expressão. Isso é particularmente útil em situações em que você cria variáveis ou parâmetros de função cujos tipos podem ser inferidos do valor com o qual estão sendo inicializados.
+
+Aqui estão alguns exemplos de como o Contextual Typing funciona:
+
+Declaração de Variáveis:
+
+let nome = "Alice"; // TypeScript infere que nome é do tipo string
+let idade = 30;     // TypeScript infere que idade é do tipo number
+
+
+Parâmetros de Função:
+
+function cumprimentar(nome: string) {
+    console.log(`Olá, ${nome}!`);
+}
+
+cumprimentar("João"); // "João" tem o tipo string
+
+Arrays e Iteração:
+
+const numeros = [1, 2, 3]; // TypeScript infere que numeros é um array de números
+
+for (const numero of numeros) {
+    console.log(numero.toFixed(2)); // TypeScript sabe que numero é do tipo number
+}
+
+Métodos Encadeados:
+
+class Pessoa {
+    constructor(public nome: string, public idade: number) {}
+}
+
+const pessoas: Pessoa[] = [
+    new Pessoa("Ana", 25),
+    new Pessoa("Pedro", 30),
+];
+
+const nomes = pessoas.map(pessoa => pessoa.nome); // TypeScript infere que nomes é um array de strings
+
+
+O Contextual Typing é especialmente útil quando você está interagindo com APIs externas, bibliotecas e estruturas de código legado, pois você pode confiar no TypeScript para inferir os tipos corretamente com base no contexto.
+
+No entanto, é importante ter em mente que o Contextual Typing é uma ferramenta poderosa, mas não substitui a declaração explícita de tipos em todos os casos. Há momentos em que você ainda precisará fornecer tipos explicitamente, especialmente quando o contexto não é suficiente para determinar os tipos de forma precisa.
+
+Em resumo, o Contextual Typing é um recurso chave do TypeScript que aproveita as informações do contexto para inferir os tipos automaticamente, tornando a programação mais eficiente e legível.
