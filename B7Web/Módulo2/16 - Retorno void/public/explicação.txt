@@ -1,0 +1,37 @@
+Em TypeScript, o tipo de retorno void é usado para indicar que uma função não retorna nenhum valor. Isso significa que a função pode executar algum código ou produzir efeitos colaterais, mas não produzirá um valor para ser usado posteriormente. O tipo void é usado para denotar a ausência de um valor de retorno concreto.
+
+Aqui estão alguns pontos importantes sobre o tipo de retorno void:
+
+Funções sem Retorno: Geralmente, as funções que realizam ações, como imprimir no console, modificar o DOM, enviar uma solicitação de rede, entre outras, podem ter um tipo de retorno void. Essas funções não retornam um valor específico, mas podem afetar o estado do sistema.
+
+Retorno Opcional: O tipo void também pode ser usado quando uma função não tem uma cláusula return. No entanto, isso não é obrigatório; você pode ter funções que não retornam explicitamente um valor, mas o TypeScript pode inferir um tipo de retorno com base no código da função.
+
+Variáveis do Tipo void: Geralmente, variáveis não podem ter o tipo void. No entanto, você pode atribuir null ou undefined a uma variável com tipo void se a configuração strictNullChecks não estiver ativada.
+
+Aqui está um exemplo de uso do tipo de retorno void:
+
+function saudacao(nome: string): void {
+    console.log(`Olá, ${nome}!`);
+}
+
+const resultado = saudacao("Alice"); // A função é chamada, mas não há valor atribuído a 'resultado'
+
+Neste exemplo, a função saudacao não retorna um valor, mas executa uma ação de imprimir uma mensagem no console. Portanto, seu tipo de retorno é void. A variável resultado não recebe nada como resultado da chamada da função.
+
+Lembrando que o tipo void não deve ser confundido com undefined ou null. O tipo void denota ausência de valor de retorno em uma função, enquanto undefined e null são valores que podem ser atribuídos a variáveis de outros tipos, incluindo void, quando a configuração strictNullChecks não está ativada.
+
+o tipo de retorno void em uma função significa que a função não produzirá um valor específico que possa ser salvo em uma variável para posterior manipulação. Isso não impede a função de operar ou realizar ações dentro dela, mas indica que o resultado dessas ações não é um valor que pode ser usado mais tarde.
+
+Quando você define uma função com retorno void, está dizendo ao TypeScript e aos outros desenvolvedores que essa função tem um propósito além de produzir um valor para ser usado. Pode ser a impressão de algo no console, a modificação do DOM, o envio de dados para um servidor, entre outras ações que não retornam um valor específico.
+
+Aqui está um exemplo para ilustrar isso:
+
+function exibirMensagem(msg: string): void {
+    console.log(msg);
+}
+
+const resultado = exibirMensagem("Olá, mundo!"); // A função é chamada, mas 'resultado' não recebe um valor
+
+Neste exemplo, a função exibirMensagem simplesmente imprime uma mensagem no console. Ela não retorna um valor que possa ser atribuído à variável resultado. O uso do tipo de retorno void indica que a função tem um propósito de exibição, mas não é destinada a retornar valores para manipulação posterior.
+
+Portanto, o tipo de retorno void é usado quando o foco da função está na execução de ações e efeitos colaterais, em vez de produzir resultados que podem ser usados posteriormente em outras partes do código.
