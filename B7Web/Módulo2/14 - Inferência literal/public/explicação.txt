@@ -1,0 +1,32 @@
+A inferência literal em TypeScript refere-se à capacidade do compilador de inferir automaticamente um tipo mais específico a partir de um valor literal (valor concreto) atribuído a uma variável, propriedade, parâmetro de função, ou em qualquer outro lugar onde tipos são usados.
+
+Isso significa que o TypeScript pode deduzir o tipo com base nos valores literais que você fornece. Vamos dar uma olhada em exemplos para entender melhor:
+
+Exemplo 1: Inferência de Tipo Literal
+
+let status = "ativo"; // TypeScript infere o tipo "ativo" como tipo literal
+
+
+Neste exemplo, o TypeScript deduz automaticamente que a variável status tem o tipo literal "ativo", não apenas o tipo string.
+
+Exemplo 2: Parâmetro de Função com Inferência Literal
+
+function imprimirStatus(status: "ativo" | "inativo") {
+    console.log(`Status: ${status}`);
+}
+
+imprimirStatus("ativo");   // Válido
+imprimirStatus("inativo"); // Válido
+imprimirStatus("pendente"); // Inválido, pois "pendente" não é um valor permitido
+
+Aqui, o parâmetro status da função imprimirStatus aceita apenas os valores literais "ativo" ou "inativo", e o TypeScript deduz o tipo do parâmetro com base nos valores literais que a função espera.
+
+A inferência literal é útil porque:
+
+Fornece Tipo Mais Específico: Ela permite que o TypeScript atribua um tipo mais específico a uma variável ou parâmetro, aumentando a precisão do tipo.
+
+Prevenção de Erros: Quando você usa valores literais em contextos específicos, o TypeScript pode detectar erros no momento da compilação caso você tente atribuir um valor que não seja compatível.
+
+Autodocumentação: Ela adiciona clareza ao código, pois os valores literais fornecem informações diretas sobre os possíveis valores que uma variável, propriedade ou função pode aceitar.
+
+No geral, a inferência literal é uma característica poderosa do TypeScript que melhora a segurança, a clareza e a precisão dos tipos no seu código, especialmente quando se trata de valores concretos ou específicos.
