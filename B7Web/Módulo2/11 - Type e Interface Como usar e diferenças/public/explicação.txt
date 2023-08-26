@@ -1,0 +1,51 @@
+type e interface são duas maneiras diferentes de definir tipos em TypeScript, mas elas têm algumas diferenças em termos de funcionalidade e uso.
+
+type
+O type é usado para definir tipos personalizados. Ele pode representar qualquer tipo, desde tipos primitivos (como string, number, boolean) até tipos complexos, como uniões de tipos, interseções e tipos literais.
+
+type Coordenadas = { x: number; y: number };
+type Opcao = "sim" | "nao";
+
+
+interface
+A interface é usada principalmente para definir a estrutura de objetos e é especialmente útil quando você deseja definir a forma de um objeto, seus métodos e propriedades. Ela também pode ser usada para criar tipos de função.
+
+interface Pessoa {
+    nome: string;
+    idade: number;
+}
+
+interface Calc {
+    somar(a: number, b: number): number;
+    subtrair(a: number, b: number): number;
+}
+
+
+Diferenças
+
+Extensibilidade:
+As interfaces são sempre extensíveis. Isso significa que você pode estender uma interface para adicionar mais propriedades ou métodos a ela.
+Os types também podem ser estendidos, mas o resultado é uma união de tipos, enquanto a extensão de uma interface é mais natural.
+
+
+Declarando tipos primitivos:
+Os types podem ser usados para definir tipos personalizados, incluindo tipos primitivos.
+As interfaces normalmente não são usadas para definir tipos primitivos.
+
+União e Interseção de Tipos:
+Os types podem ser usados para criar uniões (|) e interseções (&) de tipos.
+As interfaces não podem representar diretamente uniões e interseções.
+
+
+Herança de Interfaces:
+As interfaces podem estender outras interfaces.
+Os types não suportam herança diretamente.
+
+Aliasing:
+Quando você usa type, está criando um alias (ou apelido) para um tipo existente.
+Quando você usa interface, está criando uma nova definição de tipo.
+
+Compatibilidade de Atribuição:
+As interfaces têm uma regra de compatibilidade mais aberta em relação à atribuição de tipos quando se trata de objetos.
+Os types têm uma regra mais estrita para compatibilidade de atribuição.
+Na maioria dos casos, tanto type quanto interface podem ser usados para definir tipos de maneira adequada. A escolha entre eles geralmente depende do cenário e das necessidades específicas do projeto. Em muitos casos, você pode optar pelo que parece mais legível e semântico no contexto em que está trabalhando.
