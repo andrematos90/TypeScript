@@ -1,0 +1,26 @@
+Type Assertion (ou Asseção de Tipo) é uma técnica em TypeScript que permite que você indique explicitamente ao compilador que você sabe mais sobre o tipo de uma variável do que o TypeScript consegue inferir por conta própria. Isso é útil quando você tem mais informações sobre o tipo de um valor do que o TypeScript é capaz de determinar por análise estática.
+
+Existem duas formas principais de realizar Type Assertions:
+
+Angle-bracket Syntax (<>):
+
+
+let valor: any = "Isso é uma string";
+let tamanho: number = (<string>valor).length;
+
+
+As Keyword:
+
+let valor: any = "Isso é uma string";
+let tamanho: number = (valor as string).length;
+
+
+Em ambos os casos, você está dizendo explicitamente ao TypeScript que "confia" que a variável valor é uma string, permitindo que você acesse a propriedade length. No entanto, o TypeScript não realiza nenhuma verificação de tipo real durante a execução. A asseção de tipo é mais como uma instrução para o compilador confiar na sua análise.
+
+É importante ter cuidado ao usar asseção de tipo, pois você está essencialmente assumindo a responsabilidade de garantir que o valor seja realmente do tipo que você está asserindo. Se o valor não for do tipo esperado, isso pode levar a erros em tempo de execução.
+
+Type Assertions podem ser úteis em situações como:
+
+Quando você está trabalhando com APIs que retornam valores menos tipados, mas você tem certeza sobre o tipo real.
+Quando você está migrando código JavaScript para TypeScript e deseja informar ao compilador sobre os tipos existentes.
+No entanto, sempre que possível, é melhor usar a inferência de tipos do TypeScript e manter um código tipado e seguro. As asserções de tipo devem ser usadas com cautela e apenas quando você tem absoluta certeza sobre o tipo do valor.
