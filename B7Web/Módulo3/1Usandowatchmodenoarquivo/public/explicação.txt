@@ -1,0 +1,7 @@
+O comando tsc --watch é uma opção da linha de comando fornecida pelo TypeScript. A opção --watch é utilizada para iniciar o compilador do TypeScript no modo de observação contínua, o que permite que o compilador monitore os arquivos do seu projeto em busca de alterações e recompile automaticamente o código sempre que ocorrer uma alteração em um arquivo.
+
+Quando você executa o comando tsc --watch no seu terminal, o TypeScript inicia o processo de compilação inicial, onde verifica todos os arquivos do seu projeto e os traduz de TypeScript para JavaScript, aplicando verificações de tipo e outras transformações conforme necessário. Após a compilação inicial, o compilador permanece em execução e entra em um modo de observação, monitorando os arquivos do projeto em busca de alterações.
+
+Quando você faz uma alteração em um arquivo TypeScript enquanto o modo de observação está ativo, o compilador automaticamente detecta a mudança e recompila apenas os arquivos afetados, mantendo o processo de compilação rápido e eficiente. Isso é especialmente útil durante o desenvolvimento, pois economiza o tempo que você gastaria reexecutando manualmente o comando de compilação toda vez que fizesse uma alteração no código.
+
+Em resumo, o uso do comando tsc --watch ajuda a automatizar o processo de compilação do TypeScript durante o desenvolvimento, tornando-o mais ágil e produtivo ao garantir que as alterações no código sejam refletidas imediatamente no resultado da compilação.
