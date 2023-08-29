@@ -1,13 +1,25 @@
-no site do typescript pegar o comando da instalação global
-que instala no computador e pode ser usado em qualquer projeto
+Para compilar um arquivo TypeScript, você pode usar o comando tsc no seu terminal ou prompt de comando. Certifique-se de ter o TypeScript instalado globalmente ou localmente em seu projeto antes de prosseguir. Aqui estão os passos básicos para compilar um arquivo TypeScript:
 
-instalar o node 
-no prompt de comando do node colar "npm install -g typescript"
+Instalação do TypeScript (caso ainda não tenha): Se você não tiver o TypeScript instalado, você pode instalá-lo globalmente usando o seguinte comando:
 
-depois para confirmar a instalação  "tsc --version" que é o compilador do typescript
-se a intalação foi realizada aparecerá a versão do compilador
+npm install -g typescript
 
-no visual studio instalar as extensões
 
-.JavaScript and TypeScript Nightly
-.LiveServer
+Ou localmente em um projeto específico:
+
+npm install typescript --save-dev
+
+Crie seu arquivo TypeScript: Crie um arquivo .ts com seu código TypeScript. Por exemplo, você pode ter um arquivo chamado meu-arquivo.ts.
+
+Compilação: Abra o terminal ou prompt de comando e navegue até o diretório onde o arquivo .ts está localizado.
+
+Execute o compilador TypeScript: Use o comando tsc seguido do nome do arquivo .ts que você deseja compilar. Por exemplo:
+
+tsc meu-arquivo.ts
+
+
+Resultado da Compilação: Isso irá iniciar o compilador TypeScript e gerar um arquivo JavaScript correspondente no mesmo diretório, com o mesmo nome base, mas extensão .js. No exemplo acima, o arquivo gerado seria meu-arquivo.js.
+
+Isso é uma compilação simples de um arquivo TypeScript. Se você tiver múltiplos arquivos TypeScript e quiser automatizar o processo de compilação enquanto trabalha, você pode usar o modo de observação com o comando tsc --watch. Isso permitirá que o TypeScript observe as mudanças em seus arquivos e recompile automaticamente quando houver alterações.
+
+Lembre-se de que o arquivo tsconfig.json é uma maneira mais poderosa de configurar o comportamento da compilação do TypeScript, permitindo que você defina várias opções e configurações em um único lugar. Isso é particularmente útil para projetos maiores ou em andamento, onde você pode especificar várias opções de compilação e outras configurações.
