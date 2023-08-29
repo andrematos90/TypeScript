@@ -1,0 +1,21 @@
+O arquivo tsconfig.json é um arquivo de configuração usado no TypeScript para especificar as opções de configuração do compilador TypeScript. Ele permite que você personalize o comportamento do compilador de acordo com as necessidades do seu projeto, como as opções de compilação, os padrões de inclusão e exclusão de arquivos, as configurações de módulos, entre outras.
+
+Aqui estão os passos básicos de como o tsconfig.json funciona:
+
+Criação do Arquivo: Você cria um arquivo chamado tsconfig.json no diretório raiz do seu projeto TypeScript. Esse arquivo conterá todas as configurações que o compilador usará ao compilar seus arquivos TypeScript. Para criar o arquivo usa se o comando --init na pasta principal do projeto.
+
+Configurações: No arquivo tsconfig.json, você pode definir várias opções de configuração, cada uma com seu próprio propósito. Algumas das configurações mais comuns incluem:
+
+compilerOptions: Aqui você pode definir opções de compilação, como o alvo da versão do JavaScript, a saída de diretórios, se o código deve ser minificado, se as declarações de tipo devem ser geradas, entre outros.
+
+include e exclude: Essas opções permitem que você especifique quais arquivos devem ser incluídos ou excluídos do processo de compilação.
+
+files: Você pode listar arquivos individuais que devem ser incluídos na compilação.
+
+extends: Essa opção permite que você estenda as configurações de outro arquivo tsconfig.json, útil para projetos que compartilham configurações comuns.
+
+Compilação: Quando você executa o comando tsc (ou tsc --watch) no diretório do projeto, o compilador TypeScript verifica automaticamente a presença do arquivo tsconfig.json e usa as configurações nele para compilar seus arquivos TypeScript. Ele segue as opções definidas no arquivo para realizar a compilação de acordo com as suas especificações.
+
+Personalização: O tsconfig.json permite uma personalização flexível para diferentes cenários de desenvolvimento e projetos. Você pode ter vários arquivos tsconfig.json em subdiretórios diferentes para controlar o comportamento de compilação em partes específicas do projeto.
+
+O uso do arquivo tsconfig.json é fundamental para um desenvolvimento TypeScript organizado e eficiente, pois permite configurar o ambiente de compilação de forma consistente e automatizada. Isso evita a necessidade de fornecer as mesmas opções de compilação manualmente toda vez que você usar o comando tsc.
