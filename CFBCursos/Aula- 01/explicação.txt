@@ -1,0 +1,13 @@
+no site do typescript pegar o comando da instalação global
+que instala no computador e pode ser usado em qualquer projeto
+
+instalar o node 
+no prompt de comando do node colar "npm install -g typescript"
+
+depois para confirmar a instalação  "tsc" que é o compilador do typescript
+se a intalação foi realizada aparecerá a versão do compilador
+
+no visual studio instalar as extensões
+
+.JavaScript and TypeScript Nightly
+.LiveServer
