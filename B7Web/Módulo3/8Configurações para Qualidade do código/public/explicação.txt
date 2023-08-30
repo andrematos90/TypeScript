@@ -1,0 +1,89 @@
+noUnusedLocals 
+
+A opção noUnusedLocals é uma configuração do compilador TypeScript que controla se o compilador deve emitir avisos para variáveis locais não utilizadas. Quando definida como true, o compilador verificará seu código e emitirá avisos para quaisquer variáveis locais que foram declaradas, mas não usadas.
+
+Por exemplo, se você declarar uma variável local e não usá-la em nenhum lugar do seu código, o compilador emitirá um aviso para alertar que a variável está definida, mas não está sendo utilizada.
+
+Exemplo no tsconfig.json:
+
+
+{
+  "compilerOptions": {
+    "noUnusedLocals": true,
+    /* ... outras configurações ... */
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules"]
+}
+
+
+Nesse exemplo:
+
+noUnusedLocals está definido como true, portanto, o compilador emitirá avisos para variáveis locais não utilizadas.
+O uso dessa opção pode ser útil para garantir que seu código seja limpo e livre de variáveis não utilizadas, o que pode melhorar a legibilidade e manutenção do código. No entanto, em alguns casos, você pode ter variáveis locais que são intencionalmente não utilizadas (por exemplo, variáveis de loop que não têm efeito no resultado final), e nesses casos você pode usar comentários especiais para indicar que a variável é intencionalmente não utilizada, como por exemplo:
+
+
+// tslint:disable-next-line: no-unused-variable
+const unusedVariable = "This variable is intentionally not used";
+
+
+Lembre-se de que a ativação dessa opção pode resultar em uma melhor detecção de variáveis não utilizadas no seu código, ajudando a manter seu código mais limpo e evitando a acumulação de variáveis não utilizadas.
+
+
+
+noUnusedParameters
+
+A opção noUnusedParameters é uma configuração do compilador TypeScript que controla se o compilador deve emitir avisos para parâmetros de função não utilizados. Quando definida como true, o compilador verificará seu código e emitirá avisos para quaisquer parâmetros de função que tenham sido declarados, mas não utilizados na função.
+
+Isso ajuda a identificar quando você tem parâmetros de função que não estão sendo usados dentro da função, o que pode indicar código desnecessário ou desatualizado.
+
+Exemplo no tsconfig.json:
+
+
+{
+  "compilerOptions": {
+    "noUnusedParameters": true,
+    /* ... outras configurações ... */
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules"]
+}
+
+
+Nesse exemplo:
+
+noUnusedParameters está definido como true, portanto, o compilador emitirá avisos para parâmetros de função não utilizados.
+Lembre-se de que, em alguns casos, você pode ter parâmetros de função que são intencionalmente não utilizados, talvez para manter uma assinatura consistente em uma interface ou para fins de documentação. Nesses casos, você pode usar comentários especiais para indicar que o parâmetro é intencionalmente não utilizado:
+
+function exampleFunction(usedParam: string, _unusedParam: number) {
+  // ...
+}
+
+Ativar essa opção pode ajudar a manter seu código mais limpo e detectar parâmetros de função que não estão sendo usados dentro das funções, o que pode melhorar a qualidade e a manutenção do código.
+
+
+noImplicitReturns
+
+A opção noImplicitReturns é uma configuração do compilador TypeScript que controla se o compilador deve emitir avisos quando uma função não possui um retorno explícito ou um retorno de tipo void implícito. Quando definida como true, o compilador verificará se todas as rotas de execução da função têm retornos explícitos ou implicitamente retornam void.
+
+Isso ajuda a prevenir erros comuns em que uma função não retorna um valor ou retorna um valor inconsistente entre diferentes ramificações do código.
+
+Exemplo no tsconfig.json:
+
+
+{
+  "compilerOptions": {
+    "noImplicitReturns": true,
+    /* ... outras configurações ... */
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules"]
+}
+
+
+Nesse exemplo:
+
+noImplicitReturns está definido como true, portanto, o compilador emitirá avisos para funções que podem não ter um retorno explícito ou implicitamente retornam void.
+Lembre-se de que, em muitos casos, é uma boa prática ter retornos explícitos para todas as ramificações em uma função para garantir um comportamento consistente e evitar erros sutis. Se uma função não retorna nada, você pode usar void como tipo de retorno ou simplesmente não incluir uma declaração return na função. Essa opção ajuda a garantir que retornos implícitos indesejados não ocorram.
+
+Ativar essa opção pode ajudar a melhorar a qualidade do seu código e evitar erros de lógica relacionados a retornos de função inconsistentes.
