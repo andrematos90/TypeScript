@@ -1,0 +1,66 @@
+As opções include e exclude são configurações do arquivo tsconfig.json usadas para controlar quais arquivos TypeScript devem ser incluídos ou excluídos do processo de compilação. Essas opções ajudam a definir quais partes do seu projeto serão consideradas durante a compilação pelo TypeScript.
+
+include: Esta opção permite especificar um conjunto de padrões de inclusão para os arquivos TypeScript que você deseja que o compilador considere durante a compilação. Apenas os arquivos que correspondem a esses padrões serão incluídos no processo de compilação.
+
+Exemplo:
+
+"include": ["src/**/*.ts"]
+
+
+Neste exemplo, todos os arquivos .ts dentro da pasta src e suas subpastas serão incluídos no processo de compilação.
+
+exclude: Esta opção permite especificar um conjunto de padrões de exclusão para os arquivos que você deseja excluir do processo de compilação, mesmo que eles correspondam aos padrões de inclusão definidos anteriormente.
+
+Exemplo:
+
+"exclude": ["node_modules", "build"]
+
+
+Neste exemplo, os arquivos dentro da pasta node_modules e da pasta build não serão considerados para compilação, mesmo que eles estejam dentro dos padrões de inclusão.
+
+Quando o TypeScript compila seus arquivos, ele primeiro aplica os padrões de inclusão para determinar quais arquivos considerar. Em seguida, ele aplica os padrões de exclusão para remover quaisquer arquivos que devem ser excluídos do processo de compilação.
+
+É importante notar que, se você usar a opção include no seu tsconfig.json, o TypeScript ignorará automaticamente todos os arquivos que não estiverem dentro dos padrões de inclusão, a menos que esses arquivos sejam referenciados por outros arquivos incluídos.
+
+Em resumo, as opções include e exclude no arquivo tsconfig.json permitem que você especifique quais arquivos TypeScript devem ser considerados e quais devem ser ignorados durante o processo de compilação. Isso proporciona flexibilidade ao compilar apenas as partes relevantes do seu projeto.
+
+
+
+O uso de * e ** em padrões de inclusão e exclusão dentro das opções include e exclude no arquivo tsconfig.json é uma forma de especificar conjuntos de arquivos de maneira mais flexível.
+
+* (Asterisco): O asterisco é usado para corresponder a qualquer sequência de caracteres em um nome de arquivo ou diretório. Por exemplo, se você tiver um arquivo chamado app.ts, o padrão *.ts corresponderá a todos os arquivos com a extensão .ts, incluindo app.ts.
+
+** (Dois asteriscos): O duplo asterisco é usado para corresponder a qualquer número de diretórios ou subdiretórios. Por exemplo, o padrão src/**/*.ts corresponderá a todos os arquivos .ts em qualquer nível de subdiretório dentro da pasta src.
+
+Aqui estão alguns exemplos de como esses padrões podem ser usados:
+
+*.ts: Isso corresponderá a todos os arquivos com a extensão .ts no diretório atual.
+
+src/**/*.ts: Isso corresponderá a todos os arquivos .ts em qualquer nível de subdiretório dentro da pasta src.
+
+**/*.ts: Isso corresponderá a todos os arquivos .ts em qualquer nível de subdiretório, partindo do diretório atual.
+
+*.tsx: Isso corresponderá a todos os arquivos .tsx no diretório atual.
+
+src/**/*.*: Isso corresponderá a todos os arquivos em qualquer nível de subdiretório dentro da pasta src.
+
+Lembre-se de que os padrões * e ** podem ser usados em combinação com outros caracteres, como pastas específicas, para formar padrões mais complexos. A combinação desses caracteres com padrões mais específicos permite que você especifique de forma flexível quais arquivos ou pastas deseja incluir ou excluir durante o processo de compilação.
+
+Exemplo de uso no tsconfig.json:
+
+{
+  "compilerOptions": {
+    /* ... suas opções de compilação ... */
+  },
+  "include": [
+    "src/**/*.ts",
+    "tests/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "build"
+  ]
+}
+
+
+No exemplo acima, todos os arquivos .ts em qualquer nível de subdiretório dentro de src e tests seriam incluídos, enquanto node_modules e build seriam excluídos do processo de compilação.
