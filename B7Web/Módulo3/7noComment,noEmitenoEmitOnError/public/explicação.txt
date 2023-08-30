@@ -1,0 +1,29 @@
+As opções noComment, noEmit e noEmitOnError são configurações relacionadas à geração e manipulação dos arquivos de saída durante o processo de compilação no TypeScript.
+
+noComment: Quando definido como true, esta opção instrui o compilador TypeScript a não incluir comentários de origem nos arquivos JavaScript gerados. Isso pode ser útil para reduzir o tamanho dos arquivos de saída, uma vez que os comentários de origem não são essenciais para a execução do código.
+
+noEmit: Quando definido como true, esta opção impede completamente a geração de arquivos JavaScript durante o processo de compilação. Isso é útil quando você deseja apenas verificar a sintaxe e as verificações de tipo do código TypeScript, mas não deseja gerar arquivos de saída JavaScript.
+
+noEmitOnError: Quando definido como true, esta opção impede a geração de arquivos JavaScript somente se houver erros durante a compilação. Isso é útil para garantir que apenas código TypeScript válido seja compilado em JavaScript.
+
+Exemplo no tsconfig.json:
+
+
+{
+  "compilerOptions": {
+    "noComment": true,
+    "noEmit": true,
+    "noEmitOnError": true,
+    /* ... outras configurações ... */
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules"]
+}
+
+
+Nesse exemplo:
+
+noComment está definido como true, portanto, os comentários de origem não serão incluídos nos arquivos de saída JavaScript.
+noEmit está definido como true, portanto, nenhum arquivo JavaScript será gerado durante a compilação.
+noEmitOnError está definido como true, portanto, a geração de arquivos JavaScript será interrompida se ocorrerem erros durante a compilação.
+Essas opções podem ser úteis para controlar o comportamento da geração de arquivos de saída, os comentários de origem e como lidar com erros durante o processo de compilação. Escolha as configurações que melhor se adaptem às suas necessidades de desenvolvimento e produção.
