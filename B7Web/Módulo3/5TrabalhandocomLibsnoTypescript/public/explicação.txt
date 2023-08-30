@@ -1,0 +1,38 @@
+A opção lib é usada para especificar quais conjuntos de tipos (liberações) do ECMAScript e APIs JavaScript você deseja disponibilizar para seu código TypeScript. Isso afeta quais tipos de objetos e funções estarão disponíveis para você no código, permitindo que o TypeScript forneça verificações de tipo mais precisas e sugestões durante o desenvolvimento.
+
+As opções comuns para a configuração lib incluem:
+
+"ES5": Inclui as definições de tipo para recursos do ECMAScript 5.
+
+"ES6" ou "ES2015": Inclui as definições de tipo para recursos do ECMAScript 2015.
+
+"ES7", "ES8", ... : Inclui as definições de tipo para recursos do ECMAScript nas versões subsequentes.
+
+"DOM": Inclui definições de tipo para APIs do DOM (Document Object Model).
+
+"WebWorker": Inclui definições de tipo para APIs de Web Workers.
+
+"Node": Inclui definições de tipo para APIs Node.js.
+
+"esnext": Inclui as definições de tipo para recursos ECMAScript mais recentes, incluindo propostas que ainda não foram oficialmente aprovadas.
+
+Exemplo no tsconfig.json:
+
+
+
+{
+  "compilerOptions": {
+    "lib": ["ES6", "DOM"],
+    /* ... outras configurações ... */
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules"]
+}
+
+
+
+Nesse exemplo, as definições de tipo para recursos do ECMAScript 2015 (ES6) e APIs do DOM estarão disponíveis no código TypeScript.
+
+É importante escolher as opções de lib com base nas necessidades do seu projeto. Se você estiver desenvolvendo para a web, por exemplo, a inclusão da opção "DOM" pode ser útil. Se estiver desenvolvendo para Node.js, a opção "Node" pode ser apropriada.
+
+Ao definir as opções lib no arquivo tsconfig.json, você ajuda o TypeScript a fornecer verificações de tipo mais precisas e sugestões relevantes, garantindo que você tenha acesso aos tipos apropriados para as APIs e recursos que está utilizando.
