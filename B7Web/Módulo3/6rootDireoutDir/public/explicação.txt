@@ -1,0 +1,25 @@
+As opções rootDir e outDir são configurações importantes no arquivo tsconfig.json do TypeScript que controlam os diretórios de entrada (origem) e saída (destino) das operações de compilação. Elas afetam onde os arquivos TypeScript são lidos e onde os arquivos JavaScript compilados são gerados.
+
+rootDir: Essa opção define o diretório raiz dos arquivos TypeScript que serão compilados. É a partir deste diretório que o TypeScript procurará os arquivos a serem compilados. Todas as referências a arquivos no código serão resolvidas a partir deste diretório.
+
+outDir: Essa opção define o diretório para onde os arquivos JavaScript compilados serão gerados. Os arquivos gerados pelo TypeScript serão organizados nesse diretório, mantendo a mesma estrutura de diretórios relativa à estrutura dos arquivos originais.
+
+Aqui está um exemplo para ilustrar o uso dessas opções:
+
+
+{
+  "compilerOptions": {
+    "rootDir": "./src",
+    "outDir": "./dist",
+    /* ... outras configurações ... */
+  }
+}
+
+
+Neste exemplo:
+
+Todos os arquivos TypeScript dentro do diretório src e suas subpastas serão considerados para compilação devido à opção rootDir.
+Os arquivos JavaScript compilados correspondentes serão gerados no diretório dist mantendo a mesma estrutura de diretórios que os arquivos originais.
+Isso significa que se você tiver um arquivo src/main.ts, após a compilação, o arquivo gerado dist/main.js estará no diretório dist.
+
+O uso correto das opções rootDir e outDir pode ajudar a manter a organização do seu projeto e facilitar o gerenciamento dos arquivos compilados. No entanto, lembre-se de que, a partir do TypeScript 3.0, é recomendado que você use a opção outDir em conjunto com o rootDir em vez de usar a opção outFile, para aproveitar os benefícios da compilação em vários arquivos.
