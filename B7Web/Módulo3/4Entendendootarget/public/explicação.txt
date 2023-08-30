@@ -1,0 +1,31 @@
+A opção target é uma das configurações fundamentais no arquivo tsconfig.json do TypeScript. Ela determina a versão do ECMAScript (ou JavaScript) que o compilador TypeScript deve usar como destino ao gerar o código JavaScript correspondente a partir do código TypeScript. O target especifica qual conjunto de recursos e sintaxe deve ser utilizado para a saída gerada.
+
+As opções comuns para a configuração target incluem:
+
+"ES3": Gera código compatível com o ECMAScript 3. Isso inclui funcionalidades básicas, mas não suporta muitos recursos modernos do JavaScript.
+
+"ES5": Gera código compatível com o ECMAScript 5. Isso inclui mais recursos do JavaScript, como métodos de array como forEach, map, etc.
+
+"ES6" ou "ES2015": Gera código compatível com o ECMAScript 2015 (também conhecido como ES6). Introduz muitas funcionalidades modernas, como classes, arrow functions, e promessas.
+
+"ES2016", "ES2017", "ES2018", ... : Gera código compatível com as versões do ECMAScript subsequentes. Cada versão traz mais recursos e melhorias.
+
+"ESNext": Gera código compatível com a versão mais recente do ECMAScript, incluindo propostas de recursos ainda em desenvolvimento.
+
+Geralmente, você escolhe a versão do ECMAScript de acordo com a compatibilidade de navegadores que você deseja atingir. Se você está desenvolvendo para navegadores modernos e não precisa se preocupar com suporte a versões mais antigas, pode usar um target mais recente, como "ES6" ou "ESNext". Por outro lado, se você precisa de suporte para navegadores mais antigos, pode usar uma opção de target mais baixa, como "ES3" ou "ES5".
+
+Exemplo no tsconfig.json
+
+
+{
+  "compilerOptions": {
+    "target": "ES2015",
+    /* ... outras configurações ... */
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules"]
+}
+
+
+
+Nesse exemplo, o código TypeScript será compilado para JavaScript compatível com ECMAScript 2015 (ES6). Certifique-se de verificar a compatibilidade dos recursos do ECMAScript com os navegadores ou ambientes de execução que você está segmentando ao escolher a opção target.
