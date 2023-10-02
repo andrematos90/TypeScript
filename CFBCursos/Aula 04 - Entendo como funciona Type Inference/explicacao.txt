@@ -1,0 +1,45 @@
+A inferência de tipos (type inference) é uma característica fundamental do TypeScript que permite ao compilador determinar automaticamente o tipo das variáveis, objetos, expressões e retornos de funções com base no contexto em que são usados. Essa funcionalidade ajuda a reduzir a necessidade de declarações explícitas de tipos, tornando o código mais conciso e menos propenso a erros de tipo. Aqui está como funciona a inferência de tipos no TypeScript:
+
+Inicialização de Variáveis:
+Quando você declara uma variável e a inicializa, o TypeScript infere o tipo da variável com base no valor inicial. Por exemplo:
+
+let numero = 42; // TypeScript infere que "numero" é do tipo number
+let texto = "Olá, mundo"; // TypeScript infere que "texto" é do tipo string
+
+Inferência a partir do Contexto:
+O TypeScript também realiza inferência de tipos com base no contexto em que uma variável ou expressão é usada. Isso significa que ele pode determinar o tipo de variáveis com base em como você as usa em operações e expressões. Por exemplo:
+
+let resultado = 10 + 5; // TypeScript infere que "resultado" é do tipo number
+
+Inferência de Tipos para Parâmetros de Função:
+Quando você declara uma função, o TypeScript pode inferir os tipos dos parâmetros e o tipo de retorno com base nas operações realizadas dentro da função. Por exemplo:
+
+
+function adicionar(a, b) {
+    return a + b; // TypeScript infere que "a" e "b" são do tipo any
+}
+No entanto, é uma prática recomendada fornecer tipos explícitos para parâmetros e retornos de função para tornar seu código mais seguro e legível.
+
+Inferência a partir de Objetos Literais:
+O TypeScript pode inferir tipos a partir de objetos literais. Por exemplo:
+
+
+let pessoa = {
+    nome: "Alice",
+    idade: 30,
+};
+
+// TypeScript infere que "pessoa" é do tipo { nome: string, idade: number }
+
+União de Tipos e Inferência Condicional:
+O TypeScript também é capaz de inferir tipos mais complexos, como uniões de tipos (union types) e tipos condicionais. Isso é útil para lidar com cenários onde um valor pode ter diferentes tipos dependendo de certas condições.
+
+
+let resultado: number | string;
+if (Math.random() > 0.5) {
+    resultado = 42; // TypeScript infere "resultado" como number
+} else {
+    resultado = "Erro"; // TypeScript infere "resultado" como string
+}
+
+No entanto, lembre-se de que, em alguns casos, a inferência de tipos pode não ser tão precisa quanto a declaração explícita de tipos. É uma boa prática adicionar tipos explícitos em situações onde a inferência de tipos pode ser ambígua ou quando você deseja documentar claramente a intenção do seu código. Isso pode ajudar a evitar erros e tornar seu código mais legível e manutenível.
