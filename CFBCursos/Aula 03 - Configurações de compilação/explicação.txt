@@ -26,7 +26,7 @@ Um exemplo simples de um arquivo tsconfig.json pode ser:
   "compilerOptions": {
     "target": "ES2019",   //é a versao do ECMAScript
     "module": "CommonJS",
-    "outDir": "./dist",
+    "outDir": "./dist",  //aonde ficaram os arquivos compilados para js
     "rootDir": "./src"
   },
   "include": ["src/**/*.ts"],
