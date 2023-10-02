@@ -1,0 +1,41 @@
+Para configurar a compilação do TypeScript, você geralmente segue estas etapas:
+
+Crie um arquivo de configuração TypeScript (tsconfig.json):
+O TypeScript usa um arquivo de configuração chamado tsconfig.json para definir as opções de compilação. Você pode criar este arquivo manualmente ou usar o comando tsc --init para gerar um arquivo de configuração inicial:
+
+tsc --init
+O tsconfig.json permite configurar várias opções, como os arquivos de origem, os diretórios de saída e os módulos a serem usados. Você pode personalizar as opções conforme necessário.
+
+Estruture seus arquivos TypeScript:
+Organize seus arquivos TypeScript em um diretório, mantendo o código-fonte em arquivos .ts.
+
+Compile seus arquivos TypeScript:
+Execute o compilador TypeScript usando o comando tsc. O TypeScript irá ler o tsconfig.json e compilar seus arquivos de origem de acordo com as opções especificadas:
+
+tsc
+Isso irá gerar arquivos JavaScript no diretório de saída especificado em seu arquivo de configuração (outDir no tsconfig.json, por padrão, é a mesma pasta do arquivo de origem).
+
+Automatize a compilação (opcional):
+Para automatizar a compilação e monitorar as mudanças em seus arquivos TypeScript, você pode usar ferramentas como o tsc-watch ou tarefas de compilação em um ambiente de desenvolvimento, como o Webpack.
+
+Lembre-se de que a configuração específica do TypeScript dependerá das necessidades do seu projeto. O arquivo tsconfig.json é onde você define suas opções de compilação, como o destino do ECMAScript, os módulos a serem usados, as opções de tipo, etc.
+
+Um exemplo simples de um arquivo tsconfig.json pode ser:
+
+{
+  "compilerOptions": {
+    "target": "ES2019",   //é a versao do ECMAScript
+    "module": "CommonJS",
+    "outDir": "./dist",
+    "rootDir": "./src"
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules"]
+}
+
+Este exemplo configura o TypeScript para compilar arquivos de origem localizados na pasta src para a pasta de saída dist, usando o ECMAScript 2019 como destino e CommonJS como sistema de módulos.
+
+Certifique-se de personalizar a configuração de acordo com as necessidades do seu projeto.
+
+
+
