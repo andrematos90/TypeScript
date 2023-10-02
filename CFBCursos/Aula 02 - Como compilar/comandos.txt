@@ -1,0 +1,3 @@
+comando para ver a versao do node  node -v 
+coamando para ver a versao do npm  npm -v
+comando para ver a versao do comilador tsc --version
