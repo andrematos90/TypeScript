@@ -1,0 +1,47 @@
+Union types (tipos de união) são um recurso fundamental no TypeScript que permite a uma variável, parâmetro de função ou propriedade de objeto ter mais de um tipo possível. Isso é útil quando você deseja que uma variável possa conter valores de diferentes tipos, como números e strings, sem a necessidade de forçar uma conversão de tipo. Union types são denotados pelo operador de barra vertical |.
+
+Aqui está como você pode definir e usar union types no TypeScript:
+
+Exemplo 1: União de Tipos Simples
+
+
+// Declarando uma variável com um union type
+let numeroOuTexto: number | string;
+
+numeroOuTexto = 42;     // OK, número é do tipo number
+numeroOuTexto = "abc";  // OK, string é do tipo string
+// numeroOuTexto = true; // Erro, boolean não está no union type
+
+Neste exemplo, numeroOuTexto pode conter valores de tipo number ou string, mas não de outros tipos, como boolean.
+
+Exemplo 2: União de Tipos em Parâmetros de Função
+
+Você pode usar union types em parâmetros de função quando uma função pode aceitar argumentos de tipos diferentes:
+
+
+function exibirResultado(resultado: number | string): void {
+    console.log(resultado);
+}
+
+exibirResultado(42);    // OK, número é do tipo number
+exibirResultado("abc"); // OK, string é do tipo string
+// exibirResultado(true);  // Erro, boolean não está no union type
+
+Exemplo 3: Acessando Propriedades em Union Types
+
+Quando você tem um union type que inclui objetos com diferentes propriedades, você pode acessar propriedades que são comuns a todos os tipos do union. No entanto, para acessar propriedades específicas de um tipo em um union, você pode usar verificações de tipo.
+
+type Pessoa = { nome: string };
+type Animal = { especie: string };
+
+let serVivo: Pessoa | Animal;
+
+serVivo = { nome: "Alice" };
+
+if ("nome" in serVivo) {
+    console.log(serVivo.nome); // OK, "nome" é uma propriedade de Pessoa
+} else {
+    console.log(serVivo.especie); // OK, "especie" é uma propriedade de Animal
+}
+
+Lembre-se de que, ao usar union types, você deve tomar cuidado ao realizar operações, já que o TypeScript pode não ser capaz de inferir automaticamente o tipo correto em todas as situações. Em alguns casos, você pode precisar de verificações de tipo e assertivas de tipo para garantir que seu código funcione corretamente.
