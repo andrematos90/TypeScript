@@ -1,0 +1,34 @@
+Em TypeScript, a palavra-chave readonly é usada para declarar propriedades somente leitura em uma classe, interface, ou tipo. Isso significa que uma vez que o valor de uma propriedade é definido, ele não pode ser alterado posteriormente. Isso é útil para criar objetos imutáveis ou garantir que certos valores não sejam modificados acidentalmente.
+
+Aqui está um exemplo de como usar o readonly em TypeScript:
+
+
+class Pessoa {
+    readonly nome: string;
+    idade: number;
+
+    constructor(nome: string, idade: number) {
+        this.nome = nome; // 'nome' é uma propriedade somente leitura
+        this.idade = idade;
+    }
+
+    aniversario() {
+        this.idade++;
+    }
+}
+
+const pessoa = new Pessoa("João", 30);
+
+// Isso funcionará
+console.log(pessoa.nome); // Output: João
+
+// Isso gerará um erro, pois 'nome' é uma propriedade somente leitura
+pessoa.nome = "Maria"; // Error: Cannot assign to 'nome' because it is a read-only property
+
+// Isso funcionará, pois 'idade' não é somente leitura
+pessoa.aniversario();
+console.log(pessoa.idade); // Output: 31
+
+Observe que, no exemplo acima, a propriedade nome é declarada como readonly, enquanto a propriedade idade não é. Isso significa que você não pode atribuir um novo valor a nome após a criação do objeto, mas pode alterar o valor de idade.
+
+O uso de readonly é uma boa prática quando você deseja evitar que os valores de certas propriedades sejam modificados acidentalmente em seu código. Isso pode ajudar a tornar seu código mais seguro e mais fácil de entender, especialmente em objetos imutáveis e em situações em que você deseja garantir que os valores não sejam alterados após a inicialização.
