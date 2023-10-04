@@ -34,4 +34,5 @@ function calcularDistancia(ponto1: [number, number], ponto2: [number, number]): 
 }
 
 let distancia = calcularDistancia(coordenadas, [25, 35]);
+
 No entanto, é importante lembrar que as tuplas em TypeScript têm algumas limitações em comparação com arrays, como a falta de métodos como push ou pop, e o tamanho fixo. Portanto, é importante usá-las quando você tem um conjunto de elementos com tipos específicos e tamanhos predefinidos.
