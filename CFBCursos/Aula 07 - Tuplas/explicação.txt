@@ -1,0 +1,37 @@
+Em TypeScript, uma tupla é um tipo de dados que permite armazenar um conjunto fixo e ordenado de elementos de diferentes tipos. Ao contrário de arrays, as tuplas têm um tamanho fixo e os tipos de dados de cada elemento são conhecidos de antemão. As tuplas são úteis quando você deseja representar estruturas de dados heterogêneas, como um par ordenado (coordenadas x, y), ou uma estrutura de dados que contém informações com tipos de dados diferentes, como um registro com nome (string) e idade (number).
+
+Aqui está um exemplo simples de uma tupla em TypeScript:
+
+let coordenadas: [number, number] = [10, 20];
+Neste exemplo, coordenadas é uma tupla que contém dois números. Observe que especificamos os tipos de dados dos elementos entre colchetes, [number, number].
+
+Aqui estão algumas operações comuns em tuplas em TypeScript:
+
+Acesso a elementos:
+Você pode acessar os elementos de uma tupla usando índices, assim como em arrays:
+
+let x = coordenadas[0]; // x conterá 10
+let y = coordenadas[1]; // y conterá 20
+
+Destruturação de tuplas:
+Você pode usar a destruturação para atribuir os elementos de uma tupla a variáveis individuais:
+
+
+let [x, y] = coordenadas; // x conterá 10 e y conterá 20
+
+Modificar elementos:
+Você pode modificar os elementos de uma tupla diretamente:
+
+coordenadas[0] = 30; // Modifica o primeiro elemento para 30
+
+Operações com tuplas:
+Você pode realizar várias operações com tuplas, como concatenação ou uso em funções.
+
+function calcularDistancia(ponto1: [number, number], ponto2: [number, number]): number {
+    const deltaX = ponto2[0] - ponto1[0];
+    const deltaY = ponto2[1] - ponto1[1];
+    return Math.sqrt(deltaX ** 2 + deltaY ** 2);
+}
+
+let distancia = calcularDistancia(coordenadas, [25, 35]);
+No entanto, é importante lembrar que as tuplas em TypeScript têm algumas limitações em comparação com arrays, como a falta de métodos como push ou pop, e o tamanho fixo. Portanto, é importante usá-las quando você tem um conjunto de elementos com tipos específicos e tamanhos predefinidos.
