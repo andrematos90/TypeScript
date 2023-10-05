@@ -1,0 +1,47 @@
+Em TypeScript, um "enum" (abreviação de "enumeration") é um tipo de dados que permite definir um conjunto de valores nomeados. Os enums são úteis quando você tem um conjunto fixo de valores que desejaria representar de forma mais descritiva do que usar números ou strings literais. Aqui está uma explicação mais detalhada de como criar e usar enums em TypeScript:
+
+Para definir um enum em TypeScript, você usa a palavra-chave enum. Aqui está um exemplo simples:
+
+enum DiaDaSemana {
+  Domingo,
+  Segunda,
+  Terça,
+  Quarta,
+  Quinta,
+  Sexta,
+  Sábado
+}
+
+Neste exemplo, criamos um enum chamado DiaDaSemana com sete valores nomeados. Por padrão, os valores são associados a números começando de 0, então Domingo é 0, Segunda é 1 e assim por diante.
+
+Você pode usar esse enum em variáveis e funções da seguinte forma:
+
+let hoje: DiaDaSemana = DiaDaSemana.Quarta;
+console.log(hoje); // Isso imprimirá 3, que é o valor associado a Quarta
+
+function saudacaoDia(dia: DiaDaSemana): string {
+  switch (dia) {
+    case DiaDaSemana.Domingo:
+    case DiaDaSemana.Sábado:
+      return "Fim de semana";
+    default:
+      return "Dia de semana";
+  }
+}
+
+console.log(saudacaoDia(DiaDaSemana.Sexta)); // Isso imprimirá "Dia de semana"
+
+Os enums em TypeScript também permitem que você associe valores personalizados aos membros do enum:
+
+enum TamanhoCamiseta {
+  Pequena = "P",
+  Média = "M",
+  Grande = "G",
+  ExtraGrande = "GG"
+}
+
+let camiseta: TamanhoCamiseta = TamanhoCamiseta.Grande;
+console.log(camiseta); // Isso imprimirá "G"
+Isso pode ser útil quando você deseja associar valores de string legíveis aos membros do enum.
+
+Em resumo, os enums em TypeScript são uma maneira conveniente de representar um conjunto fixo de valores nomeados e são frequentemente usados para melhorar a legibilidade e a manutenção do código.
