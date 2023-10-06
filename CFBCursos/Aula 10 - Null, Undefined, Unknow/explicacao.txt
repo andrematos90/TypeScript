@@ -1,0 +1,43 @@
+Em TypeScript, NULL, UNDEFINED e UNKNOWN são tipos que representam diferentes estados de valores que podem ser usados em variáveis ou propriedades de objetos. Vamos explicar cada um deles e destacar as diferenças entre eles:
+
+NULL:
+
+O tipo null é um tipo que representa explicitamente a ausência de um valor ou a intenção de que uma variável não tenha um valor válido.
+Pode ser atribuído a variáveis ou propriedades que devem ter a capacidade de conter um valor nulo.
+Geralmente é usado quando você deseja indicar a ausência intencional de um valor em seu código.
+
+let valorNulo: null = null;
+
+
+UNDEFINED:
+
+O tipo undefined representa um valor que está indefinido, o que significa que a variável não foi inicializada com um valor ou uma propriedade de objeto não foi definida.
+Quando você declara uma variável, mas não a inicializa, seu valor é undefined.
+undefined também pode ser atribuído a variáveis ou propriedades para indicar explicitamente que não possuem um valor definido.
+
+let valorIndefinido: undefined = undefined;
+let variavelNaoInicializada: string; // A variável é implicitamente undefined
+
+UNKNOWN:
+
+O tipo unknown representa um valor cujo tipo é desconhecido em tempo de compilação. Isso é mais restritivo do que any, que permite qualquer tipo, pois unknown exige uma verificação explícita de tipo antes de qualquer operação significativa.
+É usado quando você não sabe o tipo de um valor, mas deseja garantir que verifique o tipo antes de usá-lo para evitar erros em tempo de execução.
+
+
+let valorDesconhecido: unknown = 42;
+let valorNumero: number;
+
+// Erro: Você precisa verificar o tipo antes de atribuir
+// o valor desconhecido a uma variável com um tipo específico
+valorNumero = valorDesconhecido; // Erro
+
+// Verificação de tipo
+if (typeof valorDesconhecido === 'number') {
+    valorNumero = valorDesconhecido; // Agora é permitido
+}
+Resumindo, as principais diferenças entre NULL, UNDEFINED e UNKNOWN em TypeScript são:
+
+NULL representa explicitamente a ausência de valor.
+UNDEFINED representa valores não inicializados ou propriedades indefinidas.
+UNKNOWN é usado quando o tipo é desconhecido e exige verificações de tipo antes de ser usado de forma segura.
+Cada um desses tipos desempenha um papel importante na tipagem estática do TypeScript, ajudando a evitar erros comuns em tempo de execução relacionados a valores ausentes ou desconhecidos.
