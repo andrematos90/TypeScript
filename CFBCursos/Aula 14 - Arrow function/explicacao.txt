@@ -1,0 +1,17 @@
+As "Arrow Function" é uma característica do TypeScript e do JavaScript que oferece uma forma concisa de escrever funções. Elas possuem algumas características importantes que as tornam úteis em diversos cenários. Aqui está uma explicação sobre as arrow functions em TypeScript:
+
+Sintaxe Concisa:
+As arrow functions fornecem uma sintaxe mais concisa para definir funções. Elas omitem a palavra-chave function e usam o símbolo => (seta) em seu lugar. Isso pode tornar o seu código mais legível e menos verboso.
+
+Exemplo:
+
+// Função tradicional
+function somar(a, b) {
+    return a + b;
+}
+
+// Arrow function
+const somar = (a, b) => a + b;
+
+Vinculação léxica do this:
+Uma das vantagens mais significativas das arrow functions é que elas capturam o valor do this a partir do contexto em que são criadas, em oposição às funções tradicionais que podem ter comportamento variável em relação ao this. Isso é particularmente útil quando você está lidando com funções de retorno de chamada (callbacks) e quer manter o contexto do this consistente.
