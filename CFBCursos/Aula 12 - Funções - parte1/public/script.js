@@ -1,4 +1,5 @@
 "use strict";
+//função com valor padrão/pré-definido
 function saudacao(nome, msg = "Seja Bem vindo!") {
     console.log(`Olá ${nome}, ${msg}`);
 }

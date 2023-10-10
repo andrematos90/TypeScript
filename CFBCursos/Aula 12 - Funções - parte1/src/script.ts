@@ -1,3 +1,4 @@
+//função com valor padrão/pré-definido
 function saudacao(nome: string, msg : string = "Seja Bem vindo!"):void{
     console.log(`Olá ${nome}, ${msg}`)
 }
