@@ -1,0 +1,62 @@
+Em TypeScript, funções desempenham um papel fundamental, assim como em JavaScript. No entanto, TypeScript adiciona recursos de tipagem estática que tornam as funções mais seguras e previsíveis. Vou explicar os conceitos fundamentais relacionados a funções em TypeScript:
+
+Declaração de Funções:
+Em TypeScript, você pode declarar funções usando a seguinte sintaxe:
+
+function nomeDaFuncao(parametro1: Tipo, parametro2: Tipo): TipoDeRetorno {
+    // corpo da função
+}
+
+nomeDaFuncao é o nome da função.
+parametro1 e parametro2 são os parâmetros da função, e você pode especificar seus tipos.
+TipoDeRetorno é o tipo de dado que a função retorna.
+Tipagem de Parâmetros e Retorno:
+Uma das principais vantagens do TypeScript é a capacidade de adicionar tipos aos parâmetros e ao valor de retorno das funções. Isso ajuda a evitar erros de tipo em tempo de compilação. Exemplo:
+
+function soma(a: number, b: number): number {
+    return a + b;
+}
+
+Neste exemplo, a e b são parâmetros do tipo number, e a função retorna um valor do tipo number.
+
+Funções Anônimas e Arrow Functions:
+TypeScript também suporta funções anônimas e arrow functions. Por exemplo:
+
+const adicao = function(a: number, b: number): number {
+    return a + b;
+};
+
+const multiplicacao = (a: number, b: number): number => a * b;
+Ambas as funções adicao e multiplicacao são funções anônimas.
+
+Parâmetros Opcionais e Padrão:
+Você pode tornar parâmetros de uma função opcionais ou fornecer valores padrão para eles:
+
+
+function saudacao(nome: string, saudacaoPersonalizada: string = "Olá") {
+    console.log(`${saudacaoPersonalizada}, ${nome}!`);
+}
+Neste exemplo, saudacaoPersonalizada é um parâmetro opcional que tem um valor padrão de "Olá".
+
+Sobrecarga de Funções:
+TypeScript permite definir várias assinaturas para uma função na forma de sobrecarga. Isso é útil quando uma função pode aceitar diferentes tipos de argumentos e retornar valores.
+
+function processaDados(input: string): string;
+function processaDados(input: number): number;
+function processaDados(input: string | number): string | number {
+    if (typeof input === 'string') {
+        return input.toUpperCase();
+    } else if (typeof input === 'number') {
+        return input * 2;
+    }
+}
+
+Funções de Callback:
+TypeScript é frequentemente usado em ambientes assíncronos, como em Node.js. Você pode tipar funções de callback, promessas e outras abstrações de tratamento assíncrono.
+
+function fetchData(callback: (data: string) => void) {
+    // Código para obter dados assincronamente
+    const dados = "Alguns dados";
+    callback(dados);
+}
+Esses são alguns dos conceitos fundamentais relacionados a funções em TypeScript. A tipagem estática proporciona segurança e documentação do código, tornando-o mais fácil de entender e manter.
