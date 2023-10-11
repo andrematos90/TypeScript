@@ -1,0 +1,72 @@
+Em TypeScript, as classes são uma forma de criar objetos que têm propriedades e métodos compartilhados. As classes são parte da orientação a objetos e são uma maneira de modelar entidades do mundo real em seu código. Elas são uma característica fundamental da linguagem TypeScript, que estende o JavaScript com recursos de tipagem estática e orientação a objetos.
+
+Aqui está uma explicação básica de como criar e usar classes em TypeScript:
+
+Declaração de Classe:
+Para criar uma classe em TypeScript, você usa a palavra-chave class, seguida pelo nome da classe. Por exemplo:
+
+
+class Pessoa {
+    // corpo da classe
+}
+
+
+Propriedades de Classe:
+Você pode adicionar propriedades a uma classe, que representam os atributos do objeto. Propriedades são declaradas dentro do corpo da classe e podem ser públicas, privadas ou protegidas:
+
+Públicas (por padrão): São acessíveis de fora da classe.
+Privadas: São acessíveis apenas dentro da própria classe.
+Protegidas: São acessíveis dentro da classe e de suas subclasses.
+
+Exemplo:
+
+class Pessoa {
+    nome: string;
+    idade: number;
+    private cpf: string;
+}
+Construtor:
+O construtor é um método especial chamado quando você cria uma nova instância da classe. Ele é usado para inicializar as propriedades do objeto. O construtor é definido com o método constructor:
+
+
+class Pessoa {
+    constructor(nome: string, idade: number) {
+        this.nome = nome;
+        this.idade = idade;
+    }
+}
+
+Métodos de Classe:
+Você pode adicionar métodos à classe para definir o comportamento dos objetos. Métodos são funções que podem ser chamadas em instâncias da classe. Por exemplo:
+
+
+class Pessoa {
+    // ... propriedades e construtor
+
+    saudacao(): string {
+        return `Olá, meu nome é ${this.nome} e tenho ${this.idade} anos.`;
+    }
+}
+
+Criando Instâncias:
+Para criar uma instância da classe, você utiliza o operador new e chama o construtor da classe:
+
+const pessoa1 = new Pessoa("Alice", 30);
+const pessoa2 = new Pessoa("Bob", 25);
+
+Herança:
+TypeScript suporta herança de classes. Você pode criar uma classe filha que herda propriedades e métodos de uma classe pai. Para fazer isso, você usa a palavra-chave extends:
+
+
+class Estudante extends Pessoa {
+    matricula: string;
+
+    constructor(nome: string, idade: number, matricula: string) {
+        super(nome, idade); // Chama o construtor da classe pai
+        this.matricula = matricula;
+    }
+
+    // Pode adicionar métodos específicos da classe Estudante aqui
+}
+
+Essas são as noções básicas de como usar classes em TypeScript. Elas ajudam a estruturar e organizar seu código de forma mais orientada a objetos e facilitam a reutilização de código, bem como a modelagem de objetos complexos.
