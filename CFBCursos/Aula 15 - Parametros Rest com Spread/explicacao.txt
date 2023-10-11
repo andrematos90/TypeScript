@@ -1,0 +1,33 @@
+Em TypeScript, o parâmetro ... (três pontos) é chamado de "parâmetro rest" ou "rest parameter". Ele é usado em uma função para permitir que você passe um número variável de argumentos como um único parâmetro. O parâmetro rest é útil quando você deseja criar funções que aceitem um número desconhecido de argumentos e deseja tratá-los como um array dentro da função. Isso é especialmente útil quando você não sabe quantos argumentos serão passados para a função com antecedência.
+
+Aqui está a sintaxe básica para definir um parâmetro rest em TypeScript:
+
+function nomeDaFuncao(...nomeDoParametro: Tipo[]) {
+  // corpo da função
+}
+Aqui estão alguns pontos importantes a serem observados sobre o parâmetro rest:
+
+O parâmetro rest deve ser o último na lista de parâmetros da função, pois ele coleta todos os argumentos remanescentes.
+
+Você pode nomear o parâmetro rest como quiser, mas é comum usar o nome ...args.
+
+O tipo do parâmetro rest pode ser qualquer tipo de array, como number[], string[], any[], ou até mesmo um tipo de objeto.
+
+Dentro da função, o parâmetro rest ...args se comporta como um array, permitindo que você acesse seus elementos e realize operações comuns de array, como looping e filtragem.
+
+Aqui está um exemplo de como usar um parâmetro rest em TypeScript:
+
+
+function somar(...numeros: number[]): number {
+  let resultado = 0;
+  for (let numero of numeros) {
+    resultado += numero;
+  }
+  return resultado;
+}
+
+console.log(somar(1, 2, 3, 4)); // Saída: 10
+
+Neste exemplo, a função somar aceita um número variável de argumentos e os trata como um array. Ela retorna a soma de todos os números passados como argumentos.
+
+O parâmetro rest é uma funcionalidade poderosa em TypeScript que torna a criação de funções flexíveis e genéricas mais simples, especialmente quando o número de argumentos pode variar de chamada para chamada.
