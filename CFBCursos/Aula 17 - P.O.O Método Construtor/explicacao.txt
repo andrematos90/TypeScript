@@ -1,0 +1,54 @@
+O método construtor é uma parte fundamental de uma classe em TypeScript e em muitas outras linguagens de programação orientadas a objetos. Ele é usado para inicializar as propriedades de um objeto quando uma nova instância da classe é criada. O método construtor é definido com o nome constructor e é executado automaticamente quando você cria um novo objeto a partir da classe.
+
+Aqui estão os principais pontos sobre o método construtor em TypeScript:
+
+Nome e Sintaxe:
+O método construtor tem o nome especial constructor e não retorna um valor. Ele é chamado automaticamente quando você instancia a classe usando a palavra-chave new. A sintaxe é a seguinte:
+
+
+class MinhaClasse {
+    constructor() {
+        // Código de inicialização das propriedades aqui
+    }
+}
+
+Inicialização de Propriedades:
+O principal propósito do construtor é inicializar as propriedades da instância da classe. Você pode passar argumentos para o construtor e usá-los para configurar os valores iniciais das propriedades da instância. Por exemplo:
+
+
+class Pessoa {
+    nome: string;
+    idade: number;
+
+    constructor(nome: string, idade: number) {
+        this.nome = nome;
+        this.idade = idade;
+    }
+}
+
+Herança e super:
+Se a sua classe estiver estendendo outra classe (herança), você pode chamar o construtor da classe pai usando a palavra-chave super. Isso é necessário para garantir que as propriedades da classe pai sejam inicializadas corretamente.
+
+class Filho extends Pai {
+    constructor() {
+        super(); // Chama o construtor da classe Pai
+        // Mais código de inicialização
+    }
+}
+
+Sobrecarga de Construtores:
+TypeScript suporta sobrecarga de construtores, o que significa que você pode ter vários construtores com diferentes parâmetros. O construtor apropriado é chamado com base nos argumentos passados ao criar uma instância da classe. Isso é útil quando você deseja fornecer diferentes formas de inicialização para os objetos.
+
+
+class Pessoa {
+    nome: string;
+    idade: number;
+
+    constructor(nome: string, idade: number);
+    constructor(nome: string) {
+        this.nome = nome;
+        this.idade = 0;
+    }
+}
+
+Em resumo, o método construtor é usado para configurar as propriedades de uma instância de classe no momento da criação. Ele desempenha um papel crucial na inicialização e no estado de objetos e é um conceito essencial na programação orientada a objetos em TypeScript e em muitas outras linguagens.
