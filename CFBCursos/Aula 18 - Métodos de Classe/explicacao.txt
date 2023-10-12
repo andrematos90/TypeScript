@@ -1,0 +1,55 @@
+Em TypeScript, os métodos de classe são funções definidas dentro de uma classe e podem ser chamados em instâncias dessa classe. Os métodos de classe são usados para encapsular a lógica relacionada a um objeto ou tipo de objeto específico. Aqui está uma explicação mais detalhada sobre métodos de classe em TypeScript:
+
+Declaração de métodos de classe:
+Para declarar um método de classe em TypeScript, você o define dentro da classe usando a sintaxe apropriada. Aqui está um exemplo básico de como declarar um método de classe:
+
+
+class MinhaClasse {
+  // Método de classe
+  meuMetodo() {
+    // Lógica do método
+  }
+}
+
+Acesso a métodos de classe:
+Para acessar um método de classe, você precisa criar uma instância da classe e, em seguida, chamar o método na instância. Aqui está como você pode fazer isso:
+
+const minhaInstancia = new MinhaClasse();
+minhaInstancia.meuMetodo(); // Chamando o método
+
+Passagem de parâmetros:
+Você pode passar parâmetros para métodos de classe da mesma maneira que faria com funções regulares. Por exemplo:
+
+class MinhaClasse {
+  cumprimentar(nome: string) {
+    console.log(`Olá, ${nome}!`);
+  }
+}
+
+const minhaInstancia = new MinhaClasse();
+minhaInstancia.cumprimentar("João"); // Saída: Olá, João!
+
+Retorno de valores:
+Métodos de classe podem retornar valores da mesma forma que funções comuns. Para isso, você pode usar a palavra-chave return:
+
+class Calculadora {
+  somar(a: number, b: number): number {
+    return a + b;
+  }
+}
+
+const calculadora = new Calculadora();
+const resultado = calculadora.somar(3, 5); // resultado conterá 8
+
+Métodos estáticos:
+Além dos métodos de instância, TypeScript permite a definição de métodos estáticos em classes. Métodos estáticos pertencem à classe em si e não às instâncias da classe. Eles são chamados diretamente na classe, sem a necessidade de criar uma instância. Aqui está um exemplo:
+
+class Matematica {
+  static dobrar(numero: number): number {
+    return numero * 2;
+  }
+}
+
+const resultado = Matematica.dobrar(5); // resultado conterá 10
+
+Os métodos de classe desempenham um papel fundamental na programação orientada a objetos em TypeScript, permitindo que você organize e encapsule a lógica relacionada a objetos em classes, tornando seu código mais estruturado e reutilizável.
