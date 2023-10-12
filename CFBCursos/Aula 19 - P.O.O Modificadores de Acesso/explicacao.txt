@@ -1,0 +1,70 @@
+Em TypeScript, assim como em muitas outras linguagens de programação orientada a objetos, os modificadores de acesso são palavras-chave usadas para controlar o acesso aos membros (propriedades e métodos) de uma classe. Eles determinam quais partes do código podem acessar e modificar esses membros. TypeScript oferece três tipos principais de modificadores de acesso: public, private e protected.
+
+Aqui está uma explicação detalhada de cada um:
+
+public: Este é o modificador de acesso padrão em TypeScript. Se uma propriedade ou método de uma classe for marcado como public, ele pode ser acessado de qualquer lugar, tanto dentro como fora da classe. Por exemplo:
+
+class Car {
+  public brand: string;
+
+  constructor(brand: string) {
+    this.brand = brand;
+  }
+}
+
+const myCar = new Car("Toyota");
+console.log(myCar.brand); // Acesso permitido
+
+
+
+private: Quando um membro é marcado como private, ele só pode ser acessado dentro da própria classe em que foi definido. Tentar acessá-lo fora da classe resultará em um erro de tempo de compilação. Isso é útil para encapsular o estado interno da classe e impedir acesso não autorizado. Exemplo:
+
+
+class BankAccount {
+  private balance: number;
+
+  constructor(initialBalance: number) {
+    this.balance = initialBalance;
+  }
+
+  withdraw(amount: number): void {
+    if (amount <= this.balance) {
+      this.balance -= amount; // Acesso permitido
+    } else {
+      console.log("Saldo insuficiente.");
+    }
+  }
+}
+
+const myAccount = new BankAccount(1000);
+myAccount.balance; // Isso resultaria em um erro, pois balance é privado.
+
+
+
+protected: Membros marcados como protected podem ser acessados dentro da classe onde foram definidos e também em classes derivadas (subclasses). Isso permite que as subclasses acessem os membros protegidos da classe base, mas eles ainda não podem ser acessados fora das classes derivadas. Aqui está um exemplo:
+
+class Person {
+  protected name: string;
+
+  constructor(name: string) {
+    this.name = name;
+  }
+}
+
+class Employee extends Person {
+  constructor(name: string, employeeID: number) {
+    super(name);
+    this.employeeID = employeeID;
+  }
+
+  getDetails() {
+    return `Name: ${this.name}, Employee ID: ${this.employeeID}`;
+  }
+}
+
+const employee = new Employee("Alice", 12345);
+console.log(employee.name); // Isso resultaria em um erro, pois name é protegido.
+console.log(employee.getDetails()); // Acesso permitido
+
+
+Os modificadores de acesso em TypeScript são úteis para garantir a encapsulação e a segurança do código, bem como para definir as regras de acesso aos membros de uma classe. Eles desempenham um papel importante na orientação a objetos e na criação de hierarquias de classes.
