@@ -1,0 +1,41 @@
+A herança é um conceito fundamental na programação orientada a objetos (POO) e também está presente em TypeScript. A herança permite que uma classe (a classe derivada ou subclasse) herde propriedades e métodos de outra classe (a classe base ou superclasse). Isso facilita a reutilização de código, cria hierarquias de classes e ajuda a organizar o código de forma mais eficiente.
+
+Em TypeScript, você pode implementar herança da seguinte maneira:
+
+class Pessoa {
+  nome: string;
+  idade: number;
+
+  constructor(nome: string, idade: number) {
+    this.nome = nome;
+    this.idade = idade;
+  }
+
+  saudacao() {
+    console.log(`Olá, meu nome é ${this.nome} e tenho ${this.idade} anos.`);
+  }
+}
+
+class Estudante extends Pessoa {
+  matricula: number;
+
+  constructor(nome: string, idade: number, matricula: number) {
+    super(nome, idade); // Chama o construtor da classe base
+    this.matricula = matricula;
+  }
+
+  estudar() {
+    console.log(`${this.nome} está estudando.`);
+  }
+}
+
+const estudante1 = new Estudante("Alice", 20, 12345);
+
+console.log(estudante1.nome); // Acesso permitido, pois nome é herdado da classe base
+estudante1.saudacao(); // Acesso permitido, pois saudacao é herdado da classe base
+console.log(estudante1.matricula); // Acesso permitido, pois matricula é da classe derivada
+estudante1.estudar(); // Acesso permitido, método da classe derivada
+
+Neste exemplo, temos uma classe base chamada Pessoa com propriedades nome e idade, e uma classe derivada chamada Estudante, que herda de Pessoa e tem uma propriedade adicional matricula. O construtor da classe derivada usa super(nome, idade) para chamar o construtor da classe base e inicializar as propriedades herdadas. A classe derivada também pode adicionar seus próprios métodos, como o método estudar neste caso.
+
+A herança em TypeScript permite criar hierarquias de classes, reutilizar código de forma eficiente e estabelecer relações entre classes para modelar objetos do mundo real de maneira mais precisa. No entanto, é importante usar a herança com cuidado e seguir os princípios da POO, como o princípio da substituição (Liskov Substitution Principle), para evitar armadilhas de design.
