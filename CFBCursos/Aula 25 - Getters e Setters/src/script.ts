@@ -39,30 +39,30 @@ class ContaPF extends Conta {
         console.log(`numero CPF....: ${this.cpf}`)
     }
 
-    public deposito(deposito:number):number{
+    public set deposito(deposito:number){
         if(deposito > 0 || deposito < 1000){
              this.saldo += deposito;
              console.log("depositado com sucesso!")
         }else{
             console.log("deposito indisponivel!")
         }
-        return this.saldo;
+        
     }
 
-    public saque(saque:number):number{
+    public set saque(saque:number){
         if(saque <= this.saldo && saque <1000){
             this.saldo -= saque;
             console.log("saque realizado!");
         }else{
             console.log("saque indisponível")
         }
-        return this.saldo;
     }
 
-    public mostraSaldo():void{
-        console.log(`saldo disponível: ${this.saldo}`)
+    public get valorSaldo():void{
+        return console.log(`valor de saldo na conta: ${this.saldo}`);
     }
-
+  
+    
 }
 
 
@@ -111,16 +111,15 @@ const cliente1 = new ContaPF(65151, "fulano");
 const cliente2 = new ContaPJ(454352, "ciclano");  
 
 
-cliente1.info() //método pode ser acessado pq é public
-//cliente2.info()  gera erro pq método é protected
+cliente1.info() 
 
-cliente1.deposito(10000);
+cliente1.deposito = 50  // método continua funcionando mas agora como uma propriedade pois é um set
 cliente2.deposito(1000000);
 
-cliente1.saque(500);
+cliente1.saque;
 cliente2.saque(38000);
 
-cliente1.mostraSaldo();
+cliente1.valorSaldo; // método continua funcionando mas agora como uma propriedade pois é um set
 cliente2.mostraSaldo();
 
 

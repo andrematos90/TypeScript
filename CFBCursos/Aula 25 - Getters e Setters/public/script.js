@@ -28,7 +28,7 @@ class ContaPF extends Conta {
         super.info();
         console.log(`numero CPF....: ${this.cpf}`);
     }
-    deposito(deposito) {
+    set deposito(deposito) {
         if (deposito > 0 || deposito < 1000) {
             this.saldo += deposito;
             console.log("depositado com sucesso!");
@@ -36,9 +36,8 @@ class ContaPF extends Conta {
         else {
             console.log("deposito indisponivel!");
         }
-        return this.saldo;
     }
-    saque(saque) {
+    set saque(saque) {
         if (saque <= this.saldo && saque < 1000) {
             this.saldo -= saque;
             console.log("saque realizado!");
@@ -46,10 +45,9 @@ class ContaPF extends Conta {
         else {
             console.log("saque indisponível");
         }
-        return this.saldo;
     }
-    mostraSaldo() {
-        console.log(`saldo disponível: ${this.saldo}`);
+    get valorSaldo() {
+        return console.log(`valor de saldo na conta: ${this.saldo}`);
     }
 }
 class ContaPJ extends Conta {
@@ -90,9 +88,9 @@ class ContaPJ extends Conta {
 const cliente1 = new ContaPF(65151, "fulano");
 const cliente2 = new ContaPJ(454352, "ciclano");
 cliente1.info();
-cliente1.deposito(10000);
+cliente1.deposito = 50;
 cliente2.deposito(1000000);
-cliente1.saque(500);
+cliente1.saque;
 cliente2.saque(38000);
-cliente1.mostraSaldo();
+cliente1.valorSaldo;
 cliente2.mostraSaldo();
