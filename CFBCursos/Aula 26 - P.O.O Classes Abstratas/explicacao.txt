@@ -1,0 +1,47 @@
+Em TypeScript, os métodos getters e setters são usados para acessar e modificar os valores de propriedades de objetos de uma maneira controlada. Eles são uma parte fundamental da programação orientada a objetos e permitem que você defina comportamentos personalizados ao acessar ou modificar os valores das propriedades de um objeto. Vamos explicar o conceito de getters e setters em TypeScript:
+
+Getter:
+Um getter é um método que permite que você acesse o valor de uma propriedade de um objeto como se fosse uma propriedade diretamente. Ele é definido usando a palavra-chave get, seguida do nome do método, sem parâmetros, que retornará o valor da propriedade. Aqui está um exemplo simples:
+
+class Pessoa {
+  private _nome: string;
+
+  constructor(nome: string) {
+    this._nome = nome;
+  }
+
+  get nome(): string {
+    return this._nome;
+  }
+}
+
+const pessoa = new Pessoa("João");
+console.log(pessoa.nome); // Acessa o getter para obter o valor da propriedade _nome
+Neste exemplo, o getter nome permite que você acesse o valor da propriedade privada _nome como se fosse uma propriedade pública.
+
+Setter:
+Um setter é um método que permite que você modifique o valor de uma propriedade de um objeto. Ele é definido usando a palavra-chave set, seguida do nome do método, com um único parâmetro que representa o novo valor que será atribuído à propriedade. Aqui está um exemplo:
+
+class Pessoa {
+  private _nome: string;
+
+  constructor(nome: string) {
+    this._nome = nome;
+  }
+
+  get nome(): string {
+    return this._nome;
+  }
+
+  set nome(novoNome: string) {
+    this._nome = novoNome;
+  }
+}
+
+const pessoa = new Pessoa("João");
+console.log(pessoa.nome); // Acessa o getter para obter o valor da propriedade _nome
+pessoa.nome = "Maria";   // Acessa o setter para modificar o valor da propriedade _nome
+console.log(pessoa.nome); // Acessa o getter novamente para obter o novo valor
+Neste exemplo, o setter nome permite que você modifique o valor da propriedade privada _nome.
+
+Getters e setters são úteis quando você precisa adicionar lógica personalizada durante a obtenção ou definição de valores de propriedades, como validações, cálculos ou notificações. Eles ajudam a manter o controle sobre como os valores das propriedades são manipulados em suas classes, promovendo a encapsulação e a manutenção do estado interno do objeto.
