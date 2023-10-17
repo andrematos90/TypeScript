@@ -1,47 +1,45 @@
-Em TypeScript, os métodos getters e setters são usados para acessar e modificar os valores de propriedades de objetos de uma maneira controlada. Eles são uma parte fundamental da programação orientada a objetos e permitem que você defina comportamentos personalizados ao acessar ou modificar os valores das propriedades de um objeto. Vamos explicar o conceito de getters e setters em TypeScript:
+Em TypeScript, as classes abstratas são classes que não podem ser instanciadas diretamente. Elas são projetadas para serem usadas como classes base para outras classes e geralmente contêm métodos ou propriedades que são compartilhados por suas subclasses. As classes abstratas servem como um esqueleto ou um contrato que as subclasses devem seguir. Aqui estão algumas características importantes das classes abstratas em TypeScript:
 
-Getter:
-Um getter é um método que permite que você acesse o valor de uma propriedade de um objeto como se fosse uma propriedade diretamente. Ele é definido usando a palavra-chave get, seguida do nome do método, sem parâmetros, que retornará o valor da propriedade. Aqui está um exemplo simples:
+Não podem ser instanciadas diretamente: Você não pode criar uma instância de uma classe abstrata usando o operador new. Em vez disso, elas são destinadas a serem estendidas por outras classes.
 
-class Pessoa {
-  private _nome: string;
+Pode conter métodos e propriedades abstratas: As classes abstratas podem conter membros abstratos, que são métodos ou propriedades declarados sem implementação. As subclasses devem fornecer uma implementação para esses membros abstratos.
 
-  constructor(nome: string) {
-    this._nome = nome;
+Podem conter métodos e propriedades concretos: Além de membros abstratos, as classes abstratas também podem conter métodos e propriedades comuns com implementações.
+
+Aqui está um exemplo de uma classe abstrata em TypeScript:
+
+abstract class Forma {
+  constructor(public cor: string) {}
+
+  abstract calcularArea(): number; // Método abstrato
+}
+
+class Retangulo extends Forma {
+  constructor(cor: string, public largura: number, public altura: number) {
+    super(cor);
   }
 
-  get nome(): string {
-    return this._nome;
+  calcularArea(): number {
+    return this.largura * this.altura;
   }
 }
 
-const pessoa = new Pessoa("João");
-console.log(pessoa.nome); // Acessa o getter para obter o valor da propriedade _nome
-Neste exemplo, o getter nome permite que você acesse o valor da propriedade privada _nome como se fosse uma propriedade pública.
-
-Setter:
-Um setter é um método que permite que você modifique o valor de uma propriedade de um objeto. Ele é definido usando a palavra-chave set, seguida do nome do método, com um único parâmetro que representa o novo valor que será atribuído à propriedade. Aqui está um exemplo:
-
-class Pessoa {
-  private _nome: string;
-
-  constructor(nome: string) {
-    this._nome = nome;
+class Circulo extends Forma {
+  constructor(cor: string, public raio: number) {
+    super(cor);
   }
 
-  get nome(): string {
-    return this._nome;
-  }
-
-  set nome(novoNome: string) {
-    this._nome = novoNome;
+  calcularArea(): number {
+    return Math.PI * this.raio * this.raio;
   }
 }
 
-const pessoa = new Pessoa("João");
-console.log(pessoa.nome); // Acessa o getter para obter o valor da propriedade _nome
-pessoa.nome = "Maria";   // Acessa o setter para modificar o valor da propriedade _nome
-console.log(pessoa.nome); // Acessa o getter novamente para obter o novo valor
-Neste exemplo, o setter nome permite que você modifique o valor da propriedade privada _nome.
+const retangulo = new Retangulo("azul", 5, 10);
+const circulo = new Circulo("vermelho", 3);
 
-Getters e setters são úteis quando você precisa adicionar lógica personalizada durante a obtenção ou definição de valores de propriedades, como validações, cálculos ou notificações. Eles ajudam a manter o controle sobre como os valores das propriedades são manipulados em suas classes, promovendo a encapsulação e a manutenção do estado interno do objeto.
+console.log(retangulo.calcularArea()); // Calcula a área do retângulo
+console.log(circulo.calcularArea());   // Calcula a área do círculo
+
+Neste exemplo, a classe Forma é uma classe abstrata que possui um membro abstrato calcularArea. As classes Retangulo e Circulo estendem a classe abstrata Forma e fornecem implementações para o método abstrato calcularArea. Isso garante que todas as subclasses de Forma tenham um método calcularArea, mas cada uma pode implementá-lo de maneira diferente.
+
+Em resumo, as classes abstratas em TypeScript são úteis quando você deseja criar uma estrutura de herança na qual algumas partes da implementação são deixadas para as subclasses, garantindo que todas as subclasses sigam um contrato específico.
