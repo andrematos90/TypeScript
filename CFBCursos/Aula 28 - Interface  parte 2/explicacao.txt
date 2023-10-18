@@ -1,0 +1,35 @@
+Em TypeScript, a herança de interfaces permite que você crie novas interfaces com base em interfaces existentes. Isso é útil quando você deseja estender uma interface existente adicionando novos membros ou sobrescrevendo os membros existentes. Isso segue o princípio de herança, onde uma nova interface pode herdar as características de uma interface existente.
+
+Aqui está um exemplo simples de como a herança de interfaces funciona em TypeScript:
+
+// Definindo uma interface base
+interface Forma {
+  calcularArea(): number;
+}
+
+// Definindo uma interface derivada que herda de Forma
+interface Retangulo extends Forma {
+  largura: number;
+  altura: number;
+}
+
+// Implementando a interface Retangulo
+class RetanguloImpl implements Retangulo {
+  largura: number;
+  altura: number;
+
+  constructor(largura: number, altura: number) {
+    this.largura = largura;
+    this.altura = altura;
+  }
+
+  calcularArea(): number {
+    return this.largura * this.altura;
+  }
+}
+
+Neste exemplo, temos duas interfaces: Forma e Retangulo. A interface Retangulo herda da interface Forma, o que significa que a interface Retangulo deve incluir o método calcularArea definido na interface Forma.
+
+Em seguida, temos uma classe RetanguloImpl que implementa a interface Retangulo. Esta classe deve fornecer uma implementação para o método calcularArea herdados da interface Forma, bem como declarar as propriedades largura e a lturaconforme definido na interface Retangulo`.
+
+A herança de interfaces em TypeScript é uma maneira poderosa de criar abstrações e garantir que as classes que implementam essas interfaces cumpram um contrato específico. Além disso, permite que você adicione novos membros às interfaces derivadas, personalizando as funcionalidades conforme necessário, mantendo a consistência com as funcionalidades da interface base.
