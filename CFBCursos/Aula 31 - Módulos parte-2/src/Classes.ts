@@ -8,7 +8,7 @@ export class Pessoa{
     }
 }
 
-export class Cachorro{
+export default class Cachorro{
     raca:string;
     peso:number;
 

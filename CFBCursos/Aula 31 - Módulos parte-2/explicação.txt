@@ -1,47 +1,35 @@
-Em TypeScript, os módulos são uma forma de organizar e estruturar seu código em partes independentes e reutilizáveis. Eles ajudam a dividir seu código em unidades lógicas, tornando-o mais organizado e fácil de gerenciar. Módulos também permitem a criação de dependências claras entre diferentes partes de seu código, promovendo a modularidade e a reutilização.
+A palavra-chave export default é uma funcionalidade do ECMAScript 2015 (ES6) e, consequentemente, é suportada pelo TypeScript. Ela permite exportar um valor por padrão de um módulo para que, quando alguém importar o módulo, esse valor seja tratado como o valor padrão do módulo. Isso é especialmente útil quando você deseja exportar um único valor, função, classe ou objeto como o "principal" export de um módulo.
 
-Existem duas formas principais de trabalhar com módulos em TypeScript:
+Aqui está um exemplo de como você pode usar export default em um módulo TypeScript:
 
-Módulos Internos (Namespaces):
-Antes da versão 1.5 do TypeScript, a forma principal de organizar código em módulos era usando namespaces, também conhecidos como módulos internos.
-Os namespaces permitem agrupar código relacionado em uma única unidade, evitando poluição do escopo global.
-Eles são definidos usando a palavra-chave namespace.
-Exemplo de namespace:
-
-namespace Matematica {
-  export function somar(a: number, b: number): number {
-    return a + b;
-  }
-}
-
-const resultado = Matematica.somar(5, 3);
-
-
-Módulos Externos (ES6 Modules):
-A partir da versão 1.5 do TypeScript e em conformidade com o ECMAScript 2015 (ES6), você pode usar módulos externos para organizar seu código.
-Módulos externos permitem que você defina módulos em arquivos separados e os importe/exporte quando necessário.
-Os módulos externos usam as palavras-chave import e export para gerenciar as dependências entre módulos.
-Exemplo de módulos externos:
-
-Em matematica.ts:
-
-export function somar(a: number, b: number): number {
+// No arquivo matematica.ts
+export default function somar(a: number, b: number): number {
   return a + b;
 }
 
-Em outro arquivo TypeScript:
+// Em outro arquivo TypeScript
+import soma from "./matematica";
 
-import { somar } from "./matematica";
+const resultado = soma(5, 3);
 
-const resultado = somar(5, 3);
-Aqui estão alguns conceitos-chave relacionados aos módulos em TypeScript:
+Neste exemplo, a função somar é exportada como o valor padrão do módulo matematica.ts. Quando você importa o módulo em outro arquivo, você pode dar a ele qualquer nome que desejar (neste caso, soma) e usar a função diretamente, como se ela fosse o único export do módulo.
 
-Export: A palavra-chave export é usada para expor funções, classes, variáveis, ou outros elementos de um módulo para que eles possam ser importados por outros módulos.
+A principal vantagem do export default é que ele simplifica a importação quando um módulo exporta apenas um valor. Em vez de nomear o que você está importando, você simplesmente importa o valor padrão usando o nome que preferir.
 
-Import: A palavra-chave import é usada para importar elementos de outros módulos para uso em seu código.
+No entanto, é importante notar que um módulo pode exportar apenas um valor padrão. Se você precisar exportar múltiplos valores ou elementos de um módulo, você pode usar a exportação padrão juntamente com exportações nomeadas:
 
-Módulos padrão: Além dos módulos nomeados que você cria, o TypeScript também suporta módulos padrão (por exemplo, import x from 'modulo'), que são amplamente utilizados para importar bibliotecas externas.
 
-Compilação: Quando você compila um código TypeScript que usa módulos externos, o compilador gera código JavaScript que é compatível com módulos do ECMAScript 2015, como CommonJS, AMD, ou SystemJS, dependendo da configuração.
+// No arquivo matematica.ts
+export default function somar(a: number, b: number): number {
+  return a + b;
+}
 
-Em resumo, os módulos em TypeScript são uma maneira eficaz de organizar seu código em unidades independentes e reutilizáveis, permitindo uma estrutura mais organizada, uma melhor gerência de dependências e a promoção da modularidade em seu projeto. Eles desempenham um papel fundamental na criação de código TypeScript robusto e manutenível.
+export function subtrair(a: number, b: number): number {
+  return a - b;
+}
+
+// Em outro arquivo TypeScript
+
+import soma, { subtrair } from "./matematica";
+
+Neste caso, a função somar é exportada como o valor padrão, e a função subtrair é exportada como uma exportação nomeada. Ambas podem ser importadas separadamente.

@@ -1,4 +1,4 @@
-import { Cachorro, Pessoa } from "./Classes";
+import Cachorro, { Pessoa } from "./Classes";
 
  const pessoa = new Pessoa("André", 33);
  const cachorro = new Cachorro("Rough Collie", 35);
