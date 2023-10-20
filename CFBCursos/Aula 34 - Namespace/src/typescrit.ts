@@ -4,7 +4,7 @@ namespace Veiculos{
         private modelo:string;
         private montadora:string;
         private motor:Motores.Motor
-        cor:Cores;
+        private cor:Cores;
         constructor(modelo:string, motor:Motores.Motor, cor:Cores){
             this.modelo = modelo;
             this.montadora = "indefinida";
@@ -33,7 +33,15 @@ namespace Veiculos{
         }
 
         get minhaPotencia(){
-            return this.motor.getPotencia
+            return this.motor.getPotencia();
+        }
+
+        get montora(){
+            return this.montadora;
+        }
+
+        set montora(montadora : string){
+            this.montadora = montadora;
         }
 
     }
